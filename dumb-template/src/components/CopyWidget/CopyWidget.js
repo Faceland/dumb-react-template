@@ -1,22 +1,13 @@
-import * as React from "react";
+import React from "react";
 import './copyWidget.scss'
 
-class CopyWidget extends React.Component {
+export const CopyWidget = () => {
 
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <div className="copyButton">
-                <span>🗎</span>
-                <span className="divider"/>
-                <span>MC.ADDRESS.WHATEVER</span>
-            </div>
-        );
-    }
-
+    return (
+        <div className="copyButton">
+            <span>🗎</span>
+            <span className="divider"/>
+            <span>MC.ADDRESS.WHATEVER</span>
+        </div>
+    );
 }
-
-export default CopyWidget
