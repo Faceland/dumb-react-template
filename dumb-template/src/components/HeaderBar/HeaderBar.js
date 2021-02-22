@@ -12,9 +12,12 @@ class HeaderBar extends React.Component {
     render() {
         return (
             <div className="headerBar">
-                <img className="logo mx-1" alt="aaaaaaaaaah your logo goes here"/>
+                <div className="logo">
+                    <img className="logo mx-1" src="https://i.imgur.com/donLOsM.gif" alt="FREE SLIMEYS DE"/>
+                    <p>Gaming</p>
+                </div>
                 <PrimaryButton>Log In</PrimaryButton>
-            </div>    
+            </div>
         )
     }
 
