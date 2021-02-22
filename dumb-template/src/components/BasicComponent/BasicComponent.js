@@ -1,4 +1,5 @@
 import * as React from "react";
+import './basicComponent.scss'
 
 class BasicComponent extends React.Component {
     constructor(props) {
@@ -7,8 +8,11 @@ class BasicComponent extends React.Component {
     }
 
     render() {
-        return <h2>I am a component!</h2>;
+        return (
+            <div className="basicStyle">I am a component!</div>
+        )
     }
+
 }
 
 export default BasicComponent
