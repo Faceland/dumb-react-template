@@ -1,5 +1,6 @@
 import * as React from "react";
 import './headerBar.scss'
+import "../../App.scss"
 
 class HeaderBar extends React.Component {
 
@@ -11,7 +12,7 @@ class HeaderBar extends React.Component {
         return (
             <div className="headerBar">
                 <img className="logo mx-1" alt="aaaaaaaaaah your logo goes here"/>
-                <button className="login-button mx-1">Log In</button>
+                <button className="login-button mx-1 theme-primary box-shadow">Log In</button>
             </div>    
         )
     }

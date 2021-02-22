@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.theme-primary {
+  background-color: #65b5eb;
+}
+
+.theme-primary:hover {
+  background-color: #4780a6;
+}
+
+.text-shadow {
+  text-shadow: rgba(0,0,0,.3) 0 2px 0;
+}
+
+.box-shadow {
+  box-shadow: rgba(0,0,0,.3) 0 2px 0;
+}

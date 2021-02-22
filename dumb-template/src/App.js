@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import BasicComponent from "./components/BasicComponent/BasicComponent";
 import HeaderBar from "./components/HeaderBar/HeaderBar";
 import MainBanner from "./components/MainBanner/MainBanner";
