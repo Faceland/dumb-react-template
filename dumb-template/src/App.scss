@@ -29,6 +29,17 @@
   box-shadow: rgba(0,0,0,.3) 0 2px 0;
 }
 
+.bodySection {
+  width: 100%;
+  background-color: white;
+}
+
 .bodyPadding {
   margin: 0 10%;
+}
+
+.smallBanner {
+  width: 100%;
+  min-height: 100px;
+  background-color: #134c7d;
 }
