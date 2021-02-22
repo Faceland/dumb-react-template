@@ -1,31 +1,20 @@
-import logo from './logo.svg';
 import './App.scss';
-import BasicComponent from "./components/BasicComponent/BasicComponent";
 import HeaderBar from "./components/HeaderBar/HeaderBar";
 import MainBanner from "./components/MainBanner/MainBanner";
+import Footer from "./components/Footer/Footer";
+import { Row, Col } from 'react-flexbox-grid';
 
 function App() {
   return (
     <div className="App">
       <HeaderBar/>
       <MainBanner/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <BasicComponent>
-          hendlo
-        </BasicComponent>
-      </header>
+        <Row>
+            <Col xs={12} sm={3} md={2} lg={1} />
+            <Col xs={6} sm={6} md={8} lg={10} />
+            <Col xs={6} sm={3} md={2} lg={1} />
+        </Row>
+        <Footer/>
     </div>
   );
 }
