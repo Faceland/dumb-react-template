@@ -1,5 +1,4 @@
 .primaryButton {
-    background-color: #4CAF50; /* Green */
     color: white;
     border: none;
     outline: 0px;
@@ -10,8 +9,4 @@
     font-size: calc(0.8rem + 0.7vw);
     cursor: pointer;
     border-radius: 4px;
-  
-    &:hover {
-      background-color: #6ad06e; /* Green */
-    }
 }

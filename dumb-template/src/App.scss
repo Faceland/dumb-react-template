@@ -19,11 +19,11 @@
 }
 
 .theme-primary {
-  background-color: #65b5eb;
-}
+  background-color: #4CAF50;
 
-.theme-primary:hover {
-  background-color: #4780a6;
+  &:hover {
+    background-color: #5ac65f;
+  }
 }
 
 .drop-shadow {
@@ -37,10 +37,4 @@
 
 .bodyPadding {
   margin: 0 10%;
-}
-
-.smallBanner {
-  width: 100%;
-  min-height: 100px;
-  background-color: #134c7d;
 }
