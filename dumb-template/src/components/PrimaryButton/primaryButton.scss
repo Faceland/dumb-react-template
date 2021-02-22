@@ -1,0 +1,17 @@
+.primaryButton {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    outline: 0px;
+    padding: 3px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: calc(0.8rem + 0.7vw);
+    cursor: pointer;
+    border-radius: 4px;
+  
+    &:hover {
+      background-color: #6ad06e; /* Green */
+    }
+}
