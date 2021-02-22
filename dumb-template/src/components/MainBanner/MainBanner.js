@@ -1,5 +1,6 @@
 import * as React from "react";
 import './mainBanner.scss'
+import CopyWidget from "../CopyWidget/CopyWidget";
 
 class MainBanner extends React.Component {
 
@@ -12,6 +13,7 @@ class MainBanner extends React.Component {
             <div className="mainBanner">
                 <div className="bannerTitle">JET FUEL</div>
                 <div className="bannerSubtitle">can't melt steel beems</div>
+                <CopyWidget/>
             </div>
         )
     }
