@@ -2,12 +2,12 @@ import './App.scss';
 
 import React, { useState, useEffect } from 'react';
 
-import HeaderBar from "./components/HeaderBar/HeaderBar";
 import Footer from "./components/Footer/Footer";
 import {Row, Col} from 'react-flexbox-grid';
 import {BodyPanel} from "./components/BodyPanel/BodyPanel";
 import {MainBanner} from "./components/MainBanner/MainBanner";
 import {PlayersOnlineBanner} from "./components/PlayersOnlineBanner/PlayersOnlineBanner";
+import {HeaderBar} from "./components/HeaderBar/HeaderBar";
 
 function App() {
 

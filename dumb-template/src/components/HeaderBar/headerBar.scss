@@ -1,11 +1,17 @@
 .headerBar {
-  background-color: #efefef;
+  top: 0;
+  right: 0;
+  position: fixed;
+  background-color: #316adb;
   width: 100%;
   height: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  transition: background-color 0.15s;
+  transition-timing-function: ease-in-out;
 
   .logo {
     height: 100%;
