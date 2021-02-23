@@ -3,7 +3,6 @@ import './headerBar.scss'
 import '../../App.scss'
 import {PrimaryButton} from '../PrimaryButton/PrimaryButton'
 
-
 export const HeaderBar = () => {
 
     const [scrollStyle, setScrollStyle] = useState({background: 'transparent'})
