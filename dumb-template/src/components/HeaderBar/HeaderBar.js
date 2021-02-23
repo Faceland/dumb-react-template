@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import './headerBar.scss'
 import '../../App.scss'
 import {PrimaryButton} from '../PrimaryButton/PrimaryButton'
@@ -14,7 +14,7 @@ export const HeaderBar = () => {
         if (currentScrollPos < 10) {
             setScrollStyle({background: 'transparent'})
         } else {
-            setScrollStyle({background: '#316adb'})
+            setScrollStyle({background: 'white'})
             prevScrollpos = currentScrollPos;
         }
     }
@@ -22,10 +22,19 @@ export const HeaderBar = () => {
     return (
         <div className="headerBar" style={scrollStyle}>
             <div className="logo">
-                <img className="logo mx-1" src="https://i.imgur.com/donLOsM.gif" alt="FREE SLIMEYS DE"/>
+                <img className="logo mx-1"
+                     src="https://hamiltonrising.com/wp-content/uploads/2018/09/website-logo-png.png"
+                     alt="FREE SLIMEYS DE"/>
                 <p>Gaming</p>
+                <div/>
+                <button className="floatingButton">Dank</button>
+                <button className="floatingButton">Meme</button>
+                <button className="floatingButton">Dreams</button>
             </div>
-            <PrimaryButton>Log In</PrimaryButton>
+            <div className="profileSection">
+                <button className="floatingButton">Profile</button>
+                <PrimaryButton>Log In</PrimaryButton>
+            </div>
         </div>
     )
 }
