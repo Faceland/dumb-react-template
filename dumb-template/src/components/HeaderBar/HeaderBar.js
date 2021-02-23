@@ -6,14 +6,14 @@ import {PrimaryButton} from '../PrimaryButton/PrimaryButton'
 export const HeaderBar = () => {
 
     const [scrollStyle, setScrollStyle] = useState({background: 'transparent'})
-    const [mobile, setMobile] = useState(window.visualViewport.height / window.visualViewport.width > 2.2)
+    const [mobile, setMobile] = useState(window.innerHeight / window.innerWidth > 1.5)
 
     window.onscroll = function () {
         setScrollStyle(window.pageYOffset < 10 ? {background: 'transparent'} : {background: 'white'});
     }
 
     window.onresize = function() {
-        setMobile(window.visualViewport.height / window.visualViewport.width > 2.2)
+        setMobile(window.innerHeight / window.innerWidth > 1.5)
     }
 
     const mobileHeader = (
