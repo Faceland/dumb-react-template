@@ -1,12 +1,12 @@
 .primaryButton {
     color: white;
     border: none;
-    outline: 0px;
-    padding: 3px 10px;
+    margin: 0px 10px;
+    outline: 0;
+    padding: 8px 10px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: calc(0.8rem + 0.7vw);
+    font-weight: 700;
     cursor: pointer;
     border-radius: 4px;
 }

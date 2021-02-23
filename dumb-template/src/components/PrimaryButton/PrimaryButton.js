@@ -4,7 +4,7 @@ import './primaryButton.scss'
 
 export const PrimaryButton = (props) => {
     return (
-        <button className="primaryButton theme-primary mx-1 drop-shadow">
+        <button className="primaryButton standardShadow theme-primary mx-1 drop-shadow">
             {props.children}
         </button>
     );

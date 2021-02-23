@@ -4,7 +4,7 @@ import './copyWidget.scss'
 export const CopyWidget = () => {
 
     return (
-        <div className="copyButton theme-primary">
+        <div className="copyButton standardShadow theme-primary">
             <span>🗎</span>
             <span className="divider"/>
             <span>MC.ADDRESS.WHATEVER</span>

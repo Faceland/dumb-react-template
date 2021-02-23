@@ -7,19 +7,35 @@ import {PrimaryButton} from '../PrimaryButton/PrimaryButton'
 export const HeaderBar = () => {
 
     const [scrollStyle, setScrollStyle] = useState({background: 'transparent'})
-    let prevScrollpos = window.pageYOffset;
+    const [mobile, setMobile] = useState(window.visualViewport.height / window.visualViewport.width > 2.2)
 
     window.onscroll = function () {
-        const currentScrollPos = window.pageYOffset;
-        if (currentScrollPos < 10) {
-            setScrollStyle({background: 'transparent'})
-        } else {
-            setScrollStyle({background: 'white'})
-            prevScrollpos = currentScrollPos;
-        }
+        setScrollStyle(window.pageYOffset < 10 ? {background: 'transparent'} : {background: 'white'});
     }
 
-    return (
+    window.onresize = function() {
+        setMobile(window.visualViewport.height / window.visualViewport.width > 2.2)
+    }
+
+    const mobileHeader = (
+        <div className="headerBar" style={scrollStyle}>
+            <div className="logo">
+                <img className="logo mx-1"
+                     src="https://hamiltonrising.com/wp-content/uploads/2018/09/website-logo-png.png"
+                     alt="FREE SLIMEYS DE"/>
+                <div/>
+                <button className="floatingButton">Dank</button>
+                <button className="floatingButton">Meme</button>
+                <button className="floatingButton">Dreams</button>
+            </div>
+            <div className="profileSection">
+                <button className="floatingButton">Profile</button>
+                <PrimaryButton>Log In</PrimaryButton>
+            </div>
+        </div>
+    )
+
+    const desktopHeader = (
         <div className="headerBar" style={scrollStyle}>
             <div className="logo">
                 <img className="logo mx-1"
@@ -35,6 +51,12 @@ export const HeaderBar = () => {
                 <button className="floatingButton">Profile</button>
                 <PrimaryButton>Log In</PrimaryButton>
             </div>
+        </div>
+    )
+
+    return (
+        <div className="headerBar" style={scrollStyle}>
+            {mobile ? mobileHeader : desktopHeader}
         </div>
     )
 }
