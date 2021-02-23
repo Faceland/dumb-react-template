@@ -2,11 +2,13 @@ import React, {useState, useEffect} from 'react';
 import './headerBar.scss'
 import '../../App.scss'
 import {PrimaryButton} from '../PrimaryButton/PrimaryButton'
+import {LoginModal} from "../LoginModal/LoginModal";
 
 export const HeaderBar = () => {
 
     const [scrollStyle, setScrollStyle] = useState({background: 'transparent'})
     const [mobile, setMobile] = useState(window.innerHeight / window.innerWidth > 1.5)
+    const [loginModalOpen, setLoginModalOpen] = useState(false);
 
     window.onscroll = function () {
         setScrollStyle(window.pageYOffset < 10 ? {background: 'transparent'} : {background: 'white'});
@@ -14,6 +16,16 @@ export const HeaderBar = () => {
 
     window.onresize = function() {
         setMobile(window.innerHeight / window.innerWidth > 1.5)
+    }
+
+    const openModal = () => {
+        setLoginModalOpen(true);
+        console.log("open!")
+    }
+
+    const closeModal = () => {
+        setLoginModalOpen(false);
+        console.log("closed!")
     }
 
     const mobileHeader = (
@@ -48,7 +60,7 @@ export const HeaderBar = () => {
             </div>
             <div className="profileSection">
                 <button className="floatingButton">Profile</button>
-                <PrimaryButton>Log In</PrimaryButton>
+                <PrimaryButton onClick={openModal}>Log In</PrimaryButton>
             </div>
         </div>
     )
@@ -56,6 +68,7 @@ export const HeaderBar = () => {
     return (
         <div className="headerBar" style={scrollStyle}>
             {mobile ? mobileHeader : desktopHeader}
+            <LoginModal isOpen={loginModalOpen} close={closeModal}/>
         </div>
     )
 }
