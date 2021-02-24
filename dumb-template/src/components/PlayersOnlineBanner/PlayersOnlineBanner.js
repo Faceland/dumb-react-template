@@ -3,7 +3,7 @@ import './PlayersOnlineBanner.scss'
 
 export const PlayersOnlineBanner = (props) => {
 
-    const [playersOnline, setPlayersOnline] = useState(42069);
+    const [playersMessage, setPlayersMessage] = useState("Loading...");
 
     useEffect(() => {
         fetch("https://api.mcsrvstat.us/2/199.127.61.235:25566")
@@ -11,7 +11,7 @@ export const PlayersOnlineBanner = (props) => {
             .then(
                 (result) => {
                     console.log("result", result)
-                    setPlayersOnline(result?.players.online)
+                    setPlayersMessage("There are " + result?.players.online + " gamers GAMING!")
                 },
                 // Note: it's important to handle errors here
                 // instead of a catch() block so that we don't swallow
@@ -24,7 +24,7 @@ export const PlayersOnlineBanner = (props) => {
 
     return (
         <div className="playersOnlineBanner">
-            <p>Wow! there are {playersOnline} gamers GAMING!</p>
+            <p>{playersMessage}</p>
         </div>
     );
 }
