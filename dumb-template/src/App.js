@@ -8,12 +8,12 @@ import {
     Link, useRouteMatch, useParams
 } from "react-router-dom";
 
-import Footer from "./components/Footer/Footer";
 import {Row, Col} from 'react-flexbox-grid';
 import {BodyPanel} from "./components/BodyPanel/BodyPanel";
 import {MainBanner} from "./components/MainBanner/MainBanner";
 import {PlayersOnlineBanner} from "./components/PlayersOnlineBanner/PlayersOnlineBanner";
 import {HeaderBar} from "./components/HeaderBar/HeaderBar";
+import {Footer} from "./components/Footer/Footer";
 
 function App() {
 
@@ -48,7 +48,9 @@ function Home() {
                         <BodyPanel>
                             <Row>
                                 <Col md>
-                                    <img src="https://i.imgur.com/vSD8DGq.gif" alt="regretz"/>
+                                    <div className="fullSize">
+                                        <img src="https://i.imgur.com/vSD8DGq.gif" alt="regretz"/>
+                                    </div>
                                 </Col>
                                 <Col md>
                                     <h5>mememe</h5>
@@ -111,7 +113,9 @@ function Home() {
                                     </div>
                                 </Col>
                                 <Col md>
-                                    <img src="https://i.imgur.com/vSD8DGq.gif" alt="regretz"/>
+                                    <div className="fullSize">
+                                        <img src="https://i.imgur.com/vSD8DGq.gif" alt="regretz"/>
+                                    </div>
                                 </Col>
                             </Row>
                         </BodyPanel>
@@ -120,7 +124,9 @@ function Home() {
                         <BodyPanel>
                             <Row>
                                 <Col md>
-                                    <img src="https://i.imgur.com/vSD8DGq.gif" alt="regretz"/>
+                                    <div className="fullSize">
+                                        <img src="https://i.imgur.com/vSD8DGq.gif" alt="regretz"/>
+                                    </div>
                                 </Col>
                                 <Col md>
                                     <h5>mememe</h5>
