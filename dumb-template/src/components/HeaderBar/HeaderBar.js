@@ -5,18 +5,18 @@ import {PrimaryButton} from '../PrimaryButton/PrimaryButton'
 import {LoginModal} from "../LoginModal/LoginModal";
 import {Link} from "react-router-dom";
 
-export const HeaderBar = (fancy) => {
+export const HeaderBar = (props) => {
 
     const [scrollStyle, setScrollStyle] = useState({background: 'transparent'})
     const [mobile, setMobile] = useState(window.innerHeight / window.innerWidth > 1.5)
     const [loginModalOpen, setLoginModalOpen] = useState(false);
 
     window.onscroll = function () {
-        if (!fancy) return
+        if (!props.fancy || mobile) return
         setScrollStyle(window.pageYOffset < 10 ? {background: 'transparent'} : {background: 'white'});
     }
 
-    window.onresize = function() {
+    window.onresize = function () {
         setMobile(window.innerHeight / window.innerWidth > 1.5)
     }
 
@@ -31,7 +31,7 @@ export const HeaderBar = (fancy) => {
     }
 
     const mobileHeader = (
-        <div className="headerBar" style={fancy ? scrollStyle : {background: 'white'}}>
+        <div className="headerBar" style={{background: 'white'}}>
             <div className="logo">
                 <img className="logo mx-1"
                      src="https://hamiltonrising.com/wp-content/uploads/2018/09/website-logo-png.png"
@@ -49,7 +49,7 @@ export const HeaderBar = (fancy) => {
     )
 
     const desktopHeader = (
-        <div className="headerBar" style={scrollStyle}>
+        <div className="headerBar" style={props.fancy ? scrollStyle : {background: 'white'}}>
             <div className="logo">
                 <img className="logo mx-1"
                      src="https://hamiltonrising.com/wp-content/uploads/2018/09/website-logo-png.png"
@@ -68,7 +68,7 @@ export const HeaderBar = (fancy) => {
     )
 
     return (
-        <div className="headerBar" style={scrollStyle}>
+        <div>
             {mobile ? mobileHeader : desktopHeader}
             <LoginModal isOpen={loginModalOpen} close={closeModal}/>
         </div>
