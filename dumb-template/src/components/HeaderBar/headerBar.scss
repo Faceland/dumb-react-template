@@ -15,7 +15,7 @@
 
   .floatingButton {
     color: black;
-    background-color: white;
+    background-color: #ffffff;
     border: none;
     margin: 0px 10px;
     outline: 0;
@@ -25,6 +25,12 @@
     font-weight: 600;
     cursor: pointer;
     border-radius: 4px;
+
+    &:hover {
+      background-color: #d2d2d2;
+      transition: background-color 0.2s;
+      transition-timing-function: ease-in-out;
+    }
   }
 
   .profileSection {
