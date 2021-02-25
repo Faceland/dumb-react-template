@@ -4,7 +4,6 @@ import '../../App.scss'
 import {PrimaryButton} from '../PrimaryButton/PrimaryButton'
 import {LoginModal} from "../LoginModal/LoginModal";
 import {Link} from "react-router-dom";
-import {Row, Col} from 'react-flexbox-grid';
 
 export const HeaderBar = (props) => {
 
@@ -52,7 +51,8 @@ export const HeaderBar = (props) => {
                     <div/>
                 </div>
                 <div>
-                    <i className="fa fa-bars mx-1" onClick={closeBurger}></i>
+                    <PrimaryButton className="mx-2" onClick={openModal}>Log In</PrimaryButton>
+                    <i className="fa fa-bars mx-2" onClick={closeBurger}></i>
                 </div>  
             </div>
             <div className="burgerNav">
@@ -61,7 +61,6 @@ export const HeaderBar = (props) => {
                     <li><Link className="floatingButton" to="/about">Meme</Link></li>
                     <li><Link className="floatingButton" to="/topics">Dreams</Link></li>
                     <li><Link className="floatingButton" to="/topics">Profile</Link></li>                   
-                    <li><PrimaryButton onClick={openModal}>Log In</PrimaryButton></li>
                 </ul>
             </div>
         </div>
@@ -76,7 +75,8 @@ export const HeaderBar = (props) => {
                 <div/>
             </div>
             <div>
-                <i className="fa fa-bars mx-1" onClick={openBurger}></i>
+                <PrimaryButton className="mx-2" onClick={openModal}>Log In</PrimaryButton>
+                <i className="fa fa-bars mx-2" onClick={openBurger}></i>
             </div>
         </div>
     )

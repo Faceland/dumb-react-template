@@ -64,9 +64,9 @@
 
 .burgerNav {
   background-color: #316adb;
-  display: relative;
-  position: relative;
-  margin-top: 50px;
+  position: fixed;
+  top: 50px;
+  right: 0;
   padding: 1px 0px 5px;
   width: 100%;
   height: auto;
@@ -79,10 +79,6 @@
 
   li {
     margin: 15px 15px;
-  }
-
-  button {
-    margin: 0px -5px;
   }
 
   a {
