@@ -61,3 +61,33 @@
     }
   }
 }
+
+.burgerNav {
+  background-color: #316adb;
+  display: relative;
+  position: relative;
+  margin-top: 50px;
+  padding: 1px 0px 5px;
+  width: 100%;
+  height: auto;
+
+  ul {
+    padding: 0px;
+    text-align: left;
+    list-style: none;
+  }
+
+  li {
+    margin: 15px 15px;
+  }
+
+  button {
+    margin: 0px -5px;
+  }
+
+  a {
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+  }
+}

@@ -4,12 +4,14 @@ import '../../App.scss'
 import {PrimaryButton} from '../PrimaryButton/PrimaryButton'
 import {LoginModal} from "../LoginModal/LoginModal";
 import {Link} from "react-router-dom";
+import {Row, Col} from 'react-flexbox-grid';
 
 export const HeaderBar = (props) => {
 
     const [scrollStyle, setScrollStyle] = useState({background: 'transparent'})
     const [mobile, setMobile] = useState(window.innerHeight / window.innerWidth > 1.5)
     const [loginModalOpen, setLoginModalOpen] = useState(false);
+    const [burgerOpen, setBurgerState] = useState(false);
 
     window.onscroll = function () {
         if (!props.fancy || mobile) return
@@ -30,20 +32,51 @@ export const HeaderBar = (props) => {
         console.log("closed!")
     }
 
+    const openBurger = () => {
+        setBurgerState(true);
+        console.log("oh boy 3am! burger time!")
+    }
+
+    const closeBurger = () => {
+        setBurgerState(false);
+        console.log("adios burger town")
+    }
+
+    const burgerHeader = (
+        <div>
+            <div className="headerBar" style={{background: 'white', transition: 'none'}}>
+                <div className="logo">
+                    <img className="logo mx-1"
+                        src="https://hamiltonrising.com/wp-content/uploads/2018/09/website-logo-png.png"
+                        alt="FREE SLIMEYS DE"/>
+                    <div/>
+                </div>
+                <div>
+                    <i className="fa fa-bars mx-1" onClick={closeBurger}></i>
+                </div>  
+            </div>
+            <div className="burgerNav">
+                <ul>
+                    <li><Link className="floatingButton" to="/">Home</Link></li>
+                    <li><Link className="floatingButton" to="/about">Meme</Link></li>
+                    <li><Link className="floatingButton" to="/topics">Dreams</Link></li>
+                    <li><Link className="floatingButton" to="/topics">Profile</Link></li>                   
+                    <li><PrimaryButton onClick={openModal}>Log In</PrimaryButton></li>
+                </ul>
+            </div>
+        </div>
+    )
+
     const mobileHeader = (
-        <div className="headerBar" style={{background: 'white'}}>
+        <div className="headerBar" style={{background: 'white', transition: 'none'}}>
             <div className="logo">
                 <img className="logo mx-1"
                      src="https://hamiltonrising.com/wp-content/uploads/2018/09/website-logo-png.png"
                      alt="FREE SLIMEYS DE"/>
                 <div/>
-                <button className="floatingButton">Dank</button>
-                <button className="floatingButton">Meme</button>
-                <button className="floatingButton">Dreams</button>
             </div>
-            <div className="profileSection">
-                <button className="floatingButton">Profile</button>
-                <PrimaryButton>Log In</PrimaryButton>
+            <div>
+                <i className="fa fa-bars mx-1" onClick={openBurger}></i>
             </div>
         </div>
     )
@@ -69,7 +102,7 @@ export const HeaderBar = (props) => {
 
     return (
         <div>
-            {mobile ? mobileHeader : desktopHeader}
+            {!mobile ? desktopHeader : burgerOpen ? burgerHeader : mobileHeader}
             <LoginModal isOpen={loginModalOpen} close={closeModal}/>
         </div>
     )
