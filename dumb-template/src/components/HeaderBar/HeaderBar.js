@@ -31,38 +31,19 @@ export const HeaderBar = (props) => {
         console.log("closed!")
     }
 
-    const openBurger = () => {
-        setBurgerState(true);
-        console.log("oh boy 3am! burger time!")
+    const toggleBurger = () => {
+        setBurgerState(!burgerOpen);
+        console.log("oh boy 1 krabby patty coming right up")
     }
 
-    const closeBurger = () => {
-        setBurgerState(false);
-        console.log("adios burger town")
-    }
-
-    const burgerHeader = (
-        <div>
-            <div className="headerBar" style={{background: 'white', transition: 'none'}}>
-                <div className="logo">
-                    <img className="logo mx-1"
-                        src="https://hamiltonrising.com/wp-content/uploads/2018/09/website-logo-png.png"
-                        alt="FREE SLIMEYS DE"/>
-                    <div/>
-                </div>
-                <div>
-                    <PrimaryButton className="mx-2" onClick={openModal}>Log In</PrimaryButton>
-                    <i className="fa fa-bars mx-2" onClick={closeBurger}></i>
-                </div>  
-            </div>
-            <div className="burgerNav">
-                <ul>
-                    <li><Link className="floatingButton" to="/">Home</Link></li>
-                    <li><Link className="floatingButton" to="/about">Meme</Link></li>
-                    <li><Link className="floatingButton" to="/topics">Dreams</Link></li>
-                    <li><Link className="floatingButton" to="/topics">Profile</Link></li>                   
-                </ul>
-            </div>
+    const burger = (
+        <div className="burgerNav">
+            <ul>
+                <li><Link className="floatingButton" to="/">Home</Link></li>
+                <li><Link className="floatingButton" to="/about">Meme</Link></li>
+                <li><Link className="floatingButton" to="/topics">Dreams</Link></li>
+                <li><Link className="floatingButton" to="/topics">Profile</Link></li>                   
+            </ul>
         </div>
     )
 
@@ -76,7 +57,7 @@ export const HeaderBar = (props) => {
             </div>
             <div>
                 <PrimaryButton className="mx-2" onClick={openModal}>Log In</PrimaryButton>
-                <i className="fa fa-bars mx-2" onClick={openBurger}></i>
+                <i className="fa fa-bars" onClick={toggleBurger}></i>
             </div>
         </div>
     )
@@ -102,7 +83,8 @@ export const HeaderBar = (props) => {
 
     return (
         <div>
-            {!mobile ? desktopHeader : burgerOpen ? burgerHeader : mobileHeader}
+            {mobile ? mobileHeader : desktopHeader}
+            {burgerOpen ? burger : null}
             <LoginModal isOpen={loginModalOpen} close={closeModal}/>
         </div>
     )
