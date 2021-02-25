@@ -60,7 +60,8 @@ export const HeaderBar = (props) => {
                     <li><Link className="floatingButton" to="/">Home</Link></li>
                     <li><Link className="floatingButton" to="/about">Meme</Link></li>
                     <li><Link className="floatingButton" to="/topics">Dreams</Link></li>
-                    <li><Link className="floatingButton" to="/topics">Profile</Link></li>                   
+                    <li><Link className="floatingButton" to="/topics">Profile</Link></li>
+                    <li><Link className="floatingButton" to="/topics">Buy Gems</Link></li>
                 </ul>
             </div>
         </div>
@@ -94,6 +95,10 @@ export const HeaderBar = (props) => {
                 <Link className="floatingButton" to="/topics">Dreams</Link>
             </div>
             <div className="profileSection">
+                <Link className="gemBackground" to="/topics">
+                    <span>a billion Gems</span>
+                    <span className="buyMore">Buy More!</span>
+                </Link>
                 <Link className="floatingButton" to="/topics">Profile</Link>
                 <PrimaryButton onClick={openModal}>Log In</PrimaryButton>
             </div>
