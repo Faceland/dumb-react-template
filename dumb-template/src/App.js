@@ -53,7 +53,7 @@ function Home() {
                                     </div>
                                 </Col>
                                 <Col md>
-                                    <h5>mememe</h5>
+                                    <p className="bodyTitle">GENERIC TITLE</p>
                                     <div>According to all known laws of aviation, there is no way a bee should be able
                                         to
                                         fly. Its wings are too small to get its fat little body off the ground. The bee,
@@ -86,7 +86,7 @@ function Home() {
                         <BodyPanel>
                             <Row>
                                 <Col md>
-                                    <h5>mememe</h5>
+                                    <p className="bodyTitle">HOLY FUCK</p>
                                     <div>According to all known laws of aviation, there is no way a bee should be able
                                         to
                                         fly. Its wings are too small to get its fat little body off the ground. The bee,
@@ -129,7 +129,7 @@ function Home() {
                                     </div>
                                 </Col>
                                 <Col md>
-                                    <h5>mememe</h5>
+                                    <p className="bodyTitle">NO FRIGGIN WAY</p>
                                     <div>According to all known laws of aviation, there is no way a bee should be able
                                         to
                                         fly. Its wings are too small to get its fat little body off the ground. The bee,
