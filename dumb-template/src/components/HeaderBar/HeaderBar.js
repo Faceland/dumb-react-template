@@ -2,15 +2,18 @@ import React, {useState, useEffect} from 'react';
 import './headerBar.scss'
 import '../../App.scss'
 import {PrimaryButton} from '../PrimaryButton/PrimaryButton'
-import {LoginModal} from "../LoginModal/LoginModal";
 import {Link} from "react-router-dom";
+import {AuthButton} from "../AuthButton/AuthButton";
+import {useAuth0} from "@auth0/auth0-react";
+import {ProfileModal} from "../Modal/ProfileModal/ProfileModal";
 
 export const HeaderBar = (props) => {
 
     const [scrollStyle, setScrollStyle] = useState({background: 'transparent'})
     const [mobile, setMobile] = useState(window.innerHeight / window.innerWidth > 1.5)
-    const [loginModalOpen, setLoginModalOpen] = useState(false);
+    const [profileOpen, setProfileOpen] = useState(false);
     const [burgerOpen, setBurgerState] = useState(false);
+    const {user, isAuthenticated, isLoading} = useAuth0();
 
     window.onscroll = function () {
         if (!props.fancy || mobile) return
@@ -22,12 +25,12 @@ export const HeaderBar = (props) => {
     }
 
     const openModal = () => {
-        setLoginModalOpen(true);
+        setProfileOpen(true);
         console.log("open!")
     }
 
     const closeModal = () => {
-        setLoginModalOpen(false);
+        setProfileOpen(false);
         console.log("closed!")
     }
 
@@ -35,6 +38,14 @@ export const HeaderBar = (props) => {
         setBurgerState(!burgerOpen);
         console.log("oh boy 1 krabby patty coming right up")
     }
+
+    const loginButton = (
+        <AuthButton className="primaryButton standardShadow theme-primary mx-1 drop-shadow"/>
+    )
+
+    const profileButton = (
+        <PrimaryButton onClick={openModal}>Profile</PrimaryButton>
+    )
 
     const burger = (
             <div className="burgerNav">
@@ -57,8 +68,8 @@ export const HeaderBar = (props) => {
                 <div/>
             </div>
             <div>
-                <PrimaryButton className="mx-2" onClick={openModal}>Log In</PrimaryButton>
-                <i className="fa fa-bars" onClick={toggleBurger}></i>
+                {isAuthenticated ? profileButton : loginButton}
+                <i className="fa fa-bars" onClick={toggleBurger}/>
             </div>
         </div>
     )
@@ -80,8 +91,7 @@ export const HeaderBar = (props) => {
                     <span>a billion Gems</span>
                     <span className="buyMore">Buy More!</span>
                 </Link>
-                <Link className="floatingButton" to="/topics">Profile</Link>
-                <PrimaryButton onClick={openModal}>Log In</PrimaryButton>
+                {isAuthenticated ? profileButton : loginButton}
             </div>
         </div>
     )
@@ -90,7 +100,7 @@ export const HeaderBar = (props) => {
         <div>
             {mobile ? mobileHeader : desktopHeader}
             {burgerOpen ? burger : null}
-            <LoginModal isOpen={loginModalOpen} close={closeModal}/>
+            <ProfileModal isOpen={profileOpen} close={closeModal}/>
         </div>
     )
 }

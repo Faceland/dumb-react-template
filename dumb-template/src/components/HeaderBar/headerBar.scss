@@ -13,26 +13,6 @@
   transition: background-color 0.15s;
   transition-timing-function: ease-in-out;
 
-  .floatingButton {
-    color: black;
-    background-color: #ffffff;
-    border: none;
-    margin: 0px 10px;
-    outline: 0;
-    padding: 8px 10px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 4px;
-
-    &:hover {
-      background-color: #d2d2d2;
-      transition: background-color 0.2s;
-      transition-timing-function: ease-in-out;
-    }
-  }
-
   .gemBackground {
     color: black;
     background-color: #b61dff;

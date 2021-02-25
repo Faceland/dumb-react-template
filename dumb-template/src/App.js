@@ -14,25 +14,32 @@ import {MainBanner} from "./components/MainBanner/MainBanner";
 import {PlayersOnlineBanner} from "./components/PlayersOnlineBanner/PlayersOnlineBanner";
 import {HeaderBar} from "./components/HeaderBar/HeaderBar";
 import {Footer} from "./components/Footer/Footer";
+import {Auth0Provider} from "@auth0/auth0-react";
 
 function App() {
 
     return (
-        <Router>
-            <div>
-                <Switch>
-                    <Route path="/about">
-                        <About/>
-                    </Route>
-                    <Route path="/topics">
-                        <Topics/>
-                    </Route>
-                    <Route path="/">
-                        <Home/>
-                    </Route>
-                </Switch>
-            </div>
-        </Router>
+        <Auth0Provider
+            domain="dev-v-l-v252.us.auth0.com"
+            clientId="QhYPNu2AYQmUgEdgVmRMTEigba8asNBG"
+            redirectUri={window.location.origin}
+        >
+            <Router>
+                <div>
+                    <Switch>
+                        <Route path="/about">
+                            <About/>
+                        </Route>
+                        <Route path="/topics">
+                            <Topics/>
+                        </Route>
+                        <Route path="/">
+                            <Home/>
+                        </Route>
+                    </Switch>
+                </div>
+            </Router>
+        </Auth0Provider>
     );
 }
 
@@ -49,7 +56,9 @@ function Home() {
                             <Row>
                                 <Col md>
                                     <div className="fullSize">
-                                        <img src="https://media1.tenor.com/images/bbb92fe330c082c0d289da72fb2277bc/tenor.gif?itemid=17592134" alt="horse hours"/>
+                                        <img
+                                            src="https://media1.tenor.com/images/bbb92fe330c082c0d289da72fb2277bc/tenor.gif?itemid=17592134"
+                                            alt="horse hours"/>
                                     </div>
                                 </Col>
                                 <Col md>
