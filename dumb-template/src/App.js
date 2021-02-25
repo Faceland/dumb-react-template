@@ -49,7 +49,7 @@ function Home() {
                             <Row>
                                 <Col md>
                                     <div className="fullSize">
-                                        <img src="https://i.imgur.com/vSD8DGq.gif" alt="regretz"/>
+                                        <img src="https://media1.tenor.com/images/bbb92fe330c082c0d289da72fb2277bc/tenor.gif?itemid=17592134" alt="horse hours"/>
                                     </div>
                                 </Col>
                                 <Col md>
