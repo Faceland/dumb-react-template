@@ -7,6 +7,7 @@ import {
     Route,
     Link, useRouteMatch, useParams
 } from "react-router-dom";
+import Store from './Store'
 
 import {Row, Col} from 'react-flexbox-grid';
 import {BodyPanel} from "./components/BodyPanel/BodyPanel";
@@ -15,6 +16,7 @@ import {PlayersOnlineBanner} from "./components/PlayersOnlineBanner/PlayersOnlin
 import {HeaderBar} from "./components/HeaderBar/HeaderBar";
 import {Footer} from "./components/Footer/Footer";
 import {Auth0Provider} from "@auth0/auth0-react";
+import {MobileStateHandler} from "./components/MobileStateHandler";
 
 function App() {
 
@@ -25,7 +27,8 @@ function App() {
             redirectUri={window.location.origin}
         >
             <Router>
-                <div>
+                <Store>
+                    <MobileStateHandler/>
                     <Switch>
                         <Route path="/about">
                             <About/>
@@ -37,7 +40,7 @@ function App() {
                             <Home/>
                         </Route>
                     </Switch>
-                </div>
+                </Store>
             </Router>
         </Auth0Provider>
     );

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import './headerBar.scss'
 import '../../App.scss'
 import {PrimaryButton} from '../PrimaryButton/PrimaryButton'
@@ -6,22 +6,20 @@ import {Link} from "react-router-dom";
 import {AuthButton} from "../AuthButton/AuthButton";
 import {useAuth0} from "@auth0/auth0-react";
 import {ProfileModal} from "../Modal/ProfileModal/ProfileModal";
+import {Context} from "../../Store";
 
 export const HeaderBar = (props) => {
 
+    const [state, dispatch] = useContext(Context);
+
     const [scrollStyle, setScrollStyle] = useState({background: 'transparent'})
-    const [mobile, setMobile] = useState(window.innerHeight / window.innerWidth > 1.5)
     const [profileOpen, setProfileOpen] = useState(false);
     const [burgerOpen, setBurgerState] = useState(false);
     const {user, isAuthenticated, isLoading} = useAuth0();
 
     window.onscroll = function () {
-        if (!props.fancy || mobile) return
+        if (!props.fancy || state.mobile) return
         setScrollStyle(window.pageYOffset < 10 ? {background: 'transparent'} : {background: 'white'});
-    }
-
-    window.onresize = function () {
-        setMobile(window.innerHeight / window.innerWidth > 1.5)
     }
 
     const openModal = () => {
@@ -98,7 +96,7 @@ export const HeaderBar = (props) => {
 
     return (
         <div>
-            {mobile ? mobileHeader : desktopHeader}
+            {state.mobile ? mobileHeader : desktopHeader}
             {burgerOpen ? burger : null}
             <ProfileModal isOpen={profileOpen} close={closeModal}/>
         </div>
