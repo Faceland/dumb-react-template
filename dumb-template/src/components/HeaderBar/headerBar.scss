@@ -14,34 +14,44 @@
   transition: background-color 0.15s;
   transition-timing-function: ease-in-out;
 
-  .gemBackground {
-    color: black;
-    background-color: #b61dff;
+  .gemButton {
     border: none;
     margin: 0px 10px;
     outline: 0;
-    padding: 8px 0px 8px 10px;
     text-align: center;
     text-decoration: none;
     font-weight: 600;
     cursor: pointer;
     border-radius: 20px;
-    z-index: 1;
-  }
 
-  .buyMore {
-    color: black;
-    background-color: #ffb32b;
-    border: none;
-    outline: 0;
-    margin-left: 8px;
-    padding: 8px 10px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 20px;
-    z-index: 0;
+    .gemDisplay {
+      color: #ffffff;
+      background-image: linear-gradient(#9e13ca, #d437ff);
+      width: 200px;
+      padding: 8px 35px 8px 10px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+
+    .buyGems {
+      color: black;
+      background-image: linear-gradient(#ffdf3e, #e7b231);
+      padding: 8px 10px 8px 10px;
+      margin-left: -30px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 20px;
+      z-index: -5;
+
+      &:hover {
+        background-image: linear-gradient(to bottom left, #ffffff, #e7b231);
+      }
+    }
   }
 
   .profileSection {

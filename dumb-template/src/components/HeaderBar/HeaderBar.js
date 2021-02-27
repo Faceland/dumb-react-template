@@ -46,14 +46,14 @@ export const HeaderBar = (props) => {
     )
 
     const burger = (
-            <div className="burgerNav">
-                <ul>
-                    <li><Link className="floatingButton" to="/">Home</Link></li>
-                    <li><Link className="floatingButton" to="/about">Meme</Link></li>
-                    <li><Link className="floatingButton" to="/topics">Dreams</Link></li>
-                    <li><Link className="floatingButton" to="/topics">Profile</Link></li>
-                    <li><Link className="floatingButton" to="/topics">Buy Gems</Link></li>
-                </ul>
+        <div className="burgerNav">
+            <ul>
+                <li><Link className="floatingButton" to="/">Home</Link></li>
+                <li><Link className="floatingButton" to="/about">Meme</Link></li>
+                <li><Link className="floatingButton" to="/topics">Dreams</Link></li>
+                <li><Link className="floatingButton" to="/topics">Profile</Link></li>
+                <li><Link className="floatingButton" to="/topics">Buy Gems</Link></li>
+            </ul>
         </div>
     )
 
@@ -63,6 +63,7 @@ export const HeaderBar = (props) => {
                 <img className="logo mx-1"
                      src="https://hamiltonrising.com/wp-content/uploads/2018/09/website-logo-png.png"
                      alt="FREE SLIMEYS DE"/>
+                <p>Gaming</p>
                 <div/>
             </div>
             <div>
@@ -85,9 +86,9 @@ export const HeaderBar = (props) => {
                 <Link className="floatingButton" to="/topics">Dreams</Link>
             </div>
             <div className="profileSection">
-                <Link className="gemBackground" to="/topics">
-                    <span>a billion Gems</span>
-                    <span className="buyMore">Buy More!</span>
+                <Link className="gemButton" to="/topics">
+                    <span className="gemDisplay">42069 Gems</span>
+                    <span className="buyGems">Get More</span>
                 </Link>
                 {isAuthenticated ? profileButton : loginButton}
             </div>
