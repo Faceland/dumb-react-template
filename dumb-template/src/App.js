@@ -17,6 +17,7 @@ import {HeaderBar} from "./components/HeaderBar/HeaderBar";
 import {Footer} from "./components/Footer/Footer";
 import {Auth0Provider} from "@auth0/auth0-react";
 import {MobileStateHandler} from "./components/MobileStateHandler";
+import {ShuffleCollection} from "./components/Shuffle/ShuffleCollection";
 
 function App() {
 
@@ -181,8 +182,8 @@ function About() {
     return (
         <div className="App">
             <HeaderBar fancy={false}/>
-            <div className="basicPage">
-                aaaaaaaaa
+            <div className="basicPage" style={{marginTop: "50px"}}>
+                <ShuffleCollection/>
             </div>
             <Footer/>
         </div>

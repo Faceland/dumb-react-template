@@ -1,0 +1,47 @@
+.shuffleCards {
+
+  width: 100%;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+
+  .shuffleCard {
+    display: inline-flex;
+    margin: 10px;
+    height: 300px;
+    width: 300px;
+    font-weight: 500;
+    background-color: #bebebe;
+    border-radius: 10px;
+
+    p {
+      display: inline;
+    }
+  }
+}
+
+
+.selectorButton-inactive {
+  background-color: #d4d4d4;
+  color: white;
+  border: none;
+  margin: 0;
+  outline: 0;
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.selectorButton-active {
+  background-color: #3dafff;
+  color: #ffffff;
+  border-style: none;
+  margin: 0;
+  outline: 0;
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+}
