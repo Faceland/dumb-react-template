@@ -5,14 +5,13 @@ import tomes from "./tomes"
 
 export const ShuffleCollection = (props) => {
 
-    const [items, setItems] = useState([])
-    const [filteredItems, setFilteredItems] = useState([{meme: "yes"}])
+    const [filteredItems, setFilteredItems] = useState([{name: "loading", meme: "yes"}])
     const [filter, setFilter] = useState({})
     const [searchText, setSearchText] = useState(undefined)
 
-    useEffect(() => {
-        const newItems = [];
+    const items = [];
 
+    if (items.length === 0) {
         for (const [key, value] of Object.entries(gems)) {
             const item = Object.assign({}, value);
             item.title = "SOCKET GEM"
@@ -21,7 +20,7 @@ export const ShuffleCollection = (props) => {
             item.description = value.lore
             item.img = "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/26/Emerald_JE3_BE3.png"
             item.background = "#10c810"
-            newItems.push(item)
+            items.push(item)
         }
 
         for (const [key, value] of Object.entries(tomes)) {
@@ -32,11 +31,9 @@ export const ShuffleCollection = (props) => {
             item.description = [value.description]
             item.img = "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/50/Book_JE2_BE2.png"
             item.background = "#1243d9"
-            newItems.push(item)
+            items.push(item)
         }
-
-        setItems(newItems);
-    }, []);
+    }
 
     useEffect(() => {
         applyFilters()
@@ -61,9 +58,8 @@ export const ShuffleCollection = (props) => {
             item.description?.join().toLowerCase().includes(searchText)
     }
 
-
-    const applyFilters = async () => {
-        setFilteredItems(await items.filter(item => itemMatches(item)));
+    const applyFilters = () => {
+        setFilteredItems(items.filter(item => itemMatches(item)));
     }
 
     const yeHaplessBuffoon = (
@@ -110,8 +106,9 @@ export const ShuffleCollection = (props) => {
             </div>
             <div>
                 <div className="shuffleCards">
-                    {filteredItems?.length === 0 ? yeHaplessBuffoon : filteredItems.map(item =>
-                        <div className="shuffleCard" style={{borderColor: `${item?.background}`}} key={item?.name}>
+                    {filteredItems?.length === 0 ? yeHaplessBuffoon : filteredItems.map((item, index) =>
+                        <div className="shuffleCard" key={`Card-${item.name}-${item?.type}-${index}`}
+                             style={{borderColor: `${item?.background}`}}>
                             <div className="shuffleContent">
                                 <div className="title">{item?.title}</div>
                                 <div className="subtitle">{item?.name}</div>
@@ -120,7 +117,8 @@ export const ShuffleCollection = (props) => {
                                 <img src={item?.img} alt="Loading..."/>
                             </div>
                             <div className="shuffleContent">
-                                {item?.description?.map(line => <p className="lore">{line}</p>)}
+                                {item?.description?.map((line, index2) =>
+                                    <p className="lore" key={`lore${index2}`}>{line}</p>)}
                             </div>
                         </div>
                     )}
