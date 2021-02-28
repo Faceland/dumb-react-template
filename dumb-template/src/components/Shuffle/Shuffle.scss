@@ -17,9 +17,9 @@
     border-radius: 10px;
 
     .shuffleContent {
+      align-content: center;
       width: 100%;
       height: auto;
-      align-content: center;
 
       .title {
         font-weight: 700;
@@ -29,6 +29,20 @@
       .subtitle {
         font-weight: 500;
         color: white;
+      }
+
+      .tag {
+        display: inline-flex;
+        margin: 0px 2px;
+
+        font-weight: 400;
+        font-size: 0.9em;
+
+        color: white;
+        text-transform: uppercase;
+        background-color: #3b5998;
+        padding: 2px 4px;
+        border-radius: 2px;
       }
 
       .lore {
