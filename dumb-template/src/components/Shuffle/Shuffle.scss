@@ -12,9 +12,21 @@
     font-weight: 500;
     background-color: #bebebe;
     border-radius: 10px;
+    flex-flow: column;
 
-    p {
-      display: inline;
+    .shuffleContent {
+      width: 100%;
+      height: auto;
+      align-content: center;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    img {
+      height: 100px;
+      width: 100px;
     }
   }
 }

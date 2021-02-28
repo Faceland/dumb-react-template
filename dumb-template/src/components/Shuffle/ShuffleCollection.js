@@ -1,23 +1,43 @@
 import React, {useState, useEffect} from "react";
-import {Row, Col} from 'react-flexbox-grid';
 import "./Shuffle.scss"
+import gems from "./gems"
+import tomes from "./tomes"
 
 export const ShuffleCollection = (props) => {
 
-    const [items, setItems] = useState([
-        {name: "option1", example: "meme", data2: "not null"},
-        {name: "option2", example: "meme", data2: "not null"},
-        {name: "option3", example: "meme", data2: "fuk"},
-        {name: "option4", example: "meme", data2: "fuk"},
-        {name: "option5", example: "meme", data2: "fuk"},
-        {name: "option6", example: "not-meme", data2: "fuk"}
-    ])
+    const [items, setItems] = useState([])
     const [filteredItems, setFilteredItems] = useState([])
-    const [filter, setFilter] = useState({example: "meme", data2: "fuk"})
+    const [filter, setFilter] = useState({})
+
+    useEffect(() => {
+        const newItems = [];
+
+        for (const [key, value] of Object.entries(gems)) {
+            const item = Object.assign({}, value);
+            item.title = "SOCKET GEM"
+            item.name = key;
+            item.type = "gem"
+            item.description = value.lore
+            item.img = "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/26/Emerald_JE3_BE3.png"
+            newItems.push(item)
+        }
+
+        for (const [key, value] of Object.entries(tomes)) {
+            const item = Object.assign({}, value);
+            item.title = "ENCHANTMENT TOME"
+            item.name = key;
+            item.type = "tome"
+            item.description = [value.description]
+            item.img = "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/50/Book_JE2_BE2.png"
+            newItems.push(item)
+        }
+
+        setItems(newItems);
+    }, []);
 
     useEffect(() => {
         refilter()
-    }, [filter])
+    }, [filter, items]);
 
     const itemMatches = (item) => {
         let match = true;
@@ -38,36 +58,40 @@ export const ShuffleCollection = (props) => {
 
     return (
         <div>
-            <div>FILTER BY DATA1</div>
-            <button className={`selectorButton-${!filter.example ? "active" : "inactive"}`}
-                onClick={() => setFilter({
-                    example: undefined
-                })}>
+            <div>FILTER BY TYPE</div>
+            <button className={`selectorButton-${!filter.type ? "active" : "inactive"}`}
+                    onClick={() => setFilter({
+                        type: undefined
+                    })}>
                 ANY
             </button>
-            <button className={`selectorButton-${filter.example === "meme" ? "active" : "inactive"}`}
-                onClick={() => setFilter({
-                    example: "meme"
-                })}>
-                MEME
+            <button className={`selectorButton-${filter.type === "gem" ? "active" : "inactive"}`}
+                    onClick={() => setFilter({
+                        type: "gem"
+                    })}>
+                SOCKET GEM
             </button>
-            <button className={`selectorButton-${filter.example === "not-meme" ? "active" : "inactive"}`}
-                onClick={() => setFilter({
-                    example: "not-meme"
-                })}>
-                NOT MEME
+            <button className={`selectorButton-${filter.type === "tome" ? "active" : "inactive"}`}
+                    onClick={() => setFilter({
+                        type: "tome"
+                    })}>
+                ENCHANTMENT TOME
             </button>
             <div className="shuffleCards">
                 {filteredItems.map(item =>
                     <div className="shuffleCard" key={item.name}>
-                        <Col>
-                            <Row>OBJECT NAME: {item.name}</Row>
-                            <Row>OBJECT DATA1: {item.example}</Row>
-                            <Row>OBJECT DATA2: {item.data2}</Row>
-                            <Row>
-                                <img src="https://i.imgur.com/NqWw6ke.gif" alt="aaaaaaaaaa"/>
-                            </Row>
-                        </Col>
+                        <div className="shuffleContent">
+                            <div>{item.title}</div>
+                            <div>{item.name}</div>
+                        </div>
+                        <div className="shuffleContent">
+                            <img src={item.img} alt="aaaaaaaaaa"/>
+                        </div>
+                        <div className="shuffleContent">
+                            {item.description?.map(line =>
+                                <p>{line}</p>
+                            )}
+                        </div>
                     </div>
                 )}
             </div>
