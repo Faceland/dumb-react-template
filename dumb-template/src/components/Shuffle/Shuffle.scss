@@ -4,29 +4,34 @@
   flex-flow: column wrap;
   justify-content: space-evenly;
 
-  .shuffleCard {
+  .shuffleCardBackground {
     display: inline-flex;
+    border-radius: 0px;
     margin: 10px;
-    height: 300px;
     width: 300px;
-    font-weight: 500;
-    background-color: #bebebe;
-    border-radius: 10px;
-    flex-flow: column;
 
-    .shuffleContent {
+    .shuffleCard {
+      background-color: #bebebe;
+      margin: 5px;
       width: 100%;
-      height: auto;
-      align-content: center;
+      font-weight: 500;
+      flex-flow: column;
+      border-radius: 0px;
 
-      p {
-        margin: 0;
+      .shuffleContent {
+        width: 100%;
+        height: auto;
+        align-content: center;
+
+        p {
+          margin: 0;
+        }
       }
-    }
 
-    img {
-      height: 100px;
-      width: 100px;
+      img {
+        height: 100px;
+        width: 100px;
+      }
     }
   }
 }
