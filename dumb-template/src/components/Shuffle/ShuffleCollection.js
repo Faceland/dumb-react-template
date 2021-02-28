@@ -20,7 +20,7 @@ export const ShuffleCollection = (props) => {
             item.type = "gem"
             item.description = value.lore
             item.img = "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/26/Emerald_JE3_BE3.png"
-            item.background = "linear-gradient(#55FF55, #00AA00)"
+            item.background = "#10c810"
             newItems.push(item)
         }
 
@@ -31,7 +31,7 @@ export const ShuffleCollection = (props) => {
             item.type = "tome"
             item.description = [value.description]
             item.img = "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/50/Book_JE2_BE2.png"
-            item.background = "linear-gradient(#5555FF, #0000AA)"
+            item.background = "#1243d9"
             newItems.push(item)
         }
 
@@ -67,18 +67,16 @@ export const ShuffleCollection = (props) => {
     }
 
     const yeHaplessBuffoon = (
-        <div className="shuffleCardBackground" style={{backgroundImage: "linear-gradient(#FFAA00, #AA0000)"}}>
-            <div className="shuffleCard" key="invalid-search">
-                <div className="shuffleContent">
-                    <div>⚠ IMPOTENT QUERIER DETECTED ⚠</div>
-                    <div>HALT! YOU'VE FOUND NO RESULTS!</div>
-                </div>
-                <div className="shuffleContent">
-                    <img src="https://i.imgur.com/Coc4Unz.gif" alt="aaaaaaaaaa"/>
-                </div>
-                <div className="shuffleContent">
-                    <p>Please refine your search and/or yourself, ye hapless buffoon</p>
-                </div>
+        <div className="shuffleCard" style={{borderColor: "#AA0000"}} key="invalid-search">
+            <div className="shuffleContent">
+                <div className="title">⚠ IMPOTENT QUERIER DETECTED ⚠</div>
+                <div className="subtitle">HALT! YOU'VE FOUND NO RESULTS!</div>
+            </div>
+            <div className="shuffleContent">
+                <img src="https://i.imgur.com/Coc4Unz.gif" alt="aaaaaaaaaa"/>
+            </div>
+            <div className="shuffleContent">
+                <p className="lore">Please refine your search and/or yourself, ye hapless buffoon</p>
             </div>
         </div>
     )
@@ -113,20 +111,16 @@ export const ShuffleCollection = (props) => {
             <div>
                 <div className="shuffleCards">
                     {filteredItems?.length === 0 ? yeHaplessBuffoon : filteredItems.map(item =>
-                        <div className="shuffleCardBackground" style={{backgroundImage: `${item?.background}`}}>
-                            <div className="shuffleCard" key={item?.name}>
-                                <div className="shuffleContent">
-                                    <div>{item?.title}</div>
-                                    <div>{item?.name}</div>
-                                </div>
-                                <div className="shuffleContent">
-                                    <img src={item?.img} alt="Loading..."/>
-                                </div>
-                                <div className="shuffleContent">
-                                    {item?.description?.map(line =>
-                                        <p>{line}</p>
-                                    )}
-                                </div>
+                        <div className="shuffleCard" style={{borderColor: `${item?.background}`}} key={item?.name}>
+                            <div className="shuffleContent">
+                                <div className="title">{item?.title}</div>
+                                <div className="subtitle">{item?.name}</div>
+                            </div>
+                            <div className="shuffleContent">
+                                <img src={item?.img} alt="Loading..."/>
+                            </div>
+                            <div className="shuffleContent">
+                                {item?.description?.map(line => <p className="lore">{line}</p>)}
                             </div>
                         </div>
                     )}
