@@ -4,33 +4,42 @@
   flex-flow: column wrap;
   justify-content: space-evenly;
 
-  .shuffleCardBackground {
+
+  .shuffleCard {
     display: inline-flex;
-    border-radius: 8px;
     margin: 10px;
     width: 300px;
+    background-color: #292929;
+    flex-flow: column;
 
-    .shuffleCard {
-      background-color: #bebebe;
-      margin: 5px;
+    border-style: solid;
+    border-width: 10px 0 0 0;
+    border-radius: 10px;
+
+    .shuffleContent {
       width: 100%;
-      font-weight: 500;
-      flex-flow: column;
-      border-radius: 6px;
+      height: auto;
+      align-content: center;
 
-      .shuffleContent {
-        width: 100%;
-        height: auto;
-        align-content: center;
+      .title {
+        font-weight: 700;
+        color: white;
+      }
 
-        p {
-          margin: 0;
-        }
+      .subtitle {
+        font-weight: 500;
+        color: white;
+      }
 
-        img {
-          height: 100px;
-          width: 100px;
-        }
+      .lore {
+        margin: 0;
+        font-weight: 500;
+        color: white;
+      }
+
+      img {
+        height: 100px;
+        width: 100px;
       }
     }
   }
