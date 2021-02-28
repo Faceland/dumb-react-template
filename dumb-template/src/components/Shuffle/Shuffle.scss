@@ -6,7 +6,7 @@
 
   .shuffleCardBackground {
     display: inline-flex;
-    border-radius: 0px;
+    border-radius: 8px;
     margin: 10px;
     width: 300px;
 
@@ -16,7 +16,7 @@
       width: 100%;
       font-weight: 500;
       flex-flow: column;
-      border-radius: 0px;
+      border-radius: 6px;
 
       .shuffleContent {
         width: 100%;
@@ -26,11 +26,11 @@
         p {
           margin: 0;
         }
-      }
 
-      img {
-        height: 100px;
-        width: 100px;
+        img {
+          height: 100px;
+          width: 100px;
+        }
       }
     }
   }

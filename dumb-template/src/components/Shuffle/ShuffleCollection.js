@@ -6,7 +6,7 @@ import tomes from "./tomes"
 export const ShuffleCollection = (props) => {
 
     const [items, setItems] = useState([])
-    const [filteredItems, setFilteredItems] = useState([])
+    const [filteredItems, setFilteredItems] = useState([{meme: "yes"}])
     const [filter, setFilter] = useState({})
     const [searchText, setSearchText] = useState(undefined)
 
@@ -39,7 +39,7 @@ export const ShuffleCollection = (props) => {
     }, []);
 
     useEffect(() => {
-        refilter()
+        applyFilters()
     }, [filter, items, searchText]);
 
     const itemMatches = (item) => {
@@ -62,9 +62,26 @@ export const ShuffleCollection = (props) => {
     }
 
 
-    const refilter = () => {
-        setFilteredItems(items.filter(item => itemMatches(item)))
+    const applyFilters = async () => {
+        setFilteredItems(await items.filter(item => itemMatches(item)));
     }
+
+    const yeHaplessBuffoon = (
+        <div className="shuffleCardBackground" style={{backgroundImage: "linear-gradient(#FFAA00, #AA0000)"}}>
+            <div className="shuffleCard" key="invalid-search">
+                <div className="shuffleContent">
+                    <div>⚠ IMPOTENT QUERIER DETECTED ⚠</div>
+                    <div>HALT! YOU'VE FOUND NO RESULTS!</div>
+                </div>
+                <div className="shuffleContent">
+                    <img src="https://i.imgur.com/Coc4Unz.gif" alt="aaaaaaaaaa"/>
+                </div>
+                <div className="shuffleContent">
+                    <p>Please refine your search and/or yourself, ye hapless buffoon</p>
+                </div>
+            </div>
+        </div>
+    )
 
     return (
         <div>
@@ -95,18 +112,18 @@ export const ShuffleCollection = (props) => {
             </div>
             <div>
                 <div className="shuffleCards">
-                    {filteredItems.map(item =>
-                        <div className="shuffleCardBackground" style={{backgroundImage: `${item.background}`}}>
-                            <div className="shuffleCard" key={item.name}>
+                    {filteredItems?.length === 0 ? yeHaplessBuffoon : filteredItems.map(item =>
+                        <div className="shuffleCardBackground" style={{backgroundImage: `${item?.background}`}}>
+                            <div className="shuffleCard" key={item?.name}>
                                 <div className="shuffleContent">
-                                    <div>{item.title}</div>
-                                    <div>{item.name}</div>
+                                    <div>{item?.title}</div>
+                                    <div>{item?.name}</div>
                                 </div>
                                 <div className="shuffleContent">
-                                    <img src={item.img} alt="aaaaaaaaaa"/>
+                                    <img src={item?.img} alt="Loading..."/>
                                 </div>
                                 <div className="shuffleContent">
-                                    {item.description?.map(line =>
+                                    {item?.description?.map(line =>
                                         <p>{line}</p>
                                     )}
                                 </div>
