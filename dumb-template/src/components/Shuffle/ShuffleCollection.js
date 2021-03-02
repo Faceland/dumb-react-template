@@ -112,11 +112,13 @@ export const ShuffleCollection = (props) => {
         setSearchTags(newTags);
     }
 
-    const enableTag = (tag) => {
+    const forceTag = (tag) => {
         if (searchTags.includes(tag)) return;
         const newTags = Object.assign([], searchTags);
         newTags.push(tag);
         setSearchTags(newTags);
+        setSearchText("");
+        setFilter({...filter, type: undefined})
     }
 
     const yeHaplessBuffoon = (
@@ -190,7 +192,7 @@ export const ShuffleCollection = (props) => {
                                         <button
                                             className="tag"
                                             key={`tag${index2}`}
-                                            onClick={() => enableTag(tag)}
+                                            onClick={() => forceTag(tag)}
                                         >{tag}</button>)}
                                 </div>
                             </div>
