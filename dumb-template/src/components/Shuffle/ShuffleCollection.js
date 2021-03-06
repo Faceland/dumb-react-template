@@ -204,9 +204,7 @@ export const ShuffleCollection = (props) => {
                          key={`Card-${item.name}-${item?.type}-${index}`}
                          style={{borderColor: `${item?.background}`}}>
 
-                        <div className={`rarityBanner rarity-${item?.rarity}`}>
-                            <div className="bookmarkTriangle"/>
-                        </div>
+                        <div className={`shadow-darker rarityBanner rarity-${item?.rarity}`}/>
 
                         <div className="shuffleContent">
                             <div className="shuffleElement">

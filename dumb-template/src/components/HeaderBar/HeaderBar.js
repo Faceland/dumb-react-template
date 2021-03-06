@@ -38,7 +38,7 @@ export const HeaderBar = (props) => {
     }
 
     const loginButton = (
-        <AuthButton className="primaryButton standardShadow theme-primary mx-1 drop-shadow"/>
+        <AuthButton className="primaryButton shadow-normal theme-primary mx-1 drop-shadow"/>
     )
 
     const profileButton = (
