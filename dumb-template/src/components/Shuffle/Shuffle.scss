@@ -17,8 +17,7 @@
   }
 
   .rarityBanner {
-    background-image: linear-gradient(to right, rgba(60,60,60,0.3) 0%, transparent 25%);
-    border-radius: 6px 0px 0px 6px;
+    border-radius: 4px 0px 0px 4px;
     position: absolute;
     height: 36px;
     width: 60px;
@@ -28,18 +27,23 @@
 
   .rarity-Common {
     background-color: #ffffff;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.15) 0%, transparent 30%);
   }
   .rarity-Uncommon {
     background-color: #2b83ff;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.25) 0%, transparent 30%);
   }
   .rarity-Rare {
     background-color: #942dcf;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.35) 0%, transparent 30%);
   }
   .rarity-Epic {
     background-color: #fc5656;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.3) 0%, transparent 30%);
   }
   .rarity-Unique {
     background-color: #f8bd24;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.2) 0%, transparent 30%);
   }
 
   .shuffleCard {
