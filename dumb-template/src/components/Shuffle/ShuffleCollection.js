@@ -200,11 +200,11 @@ export const ShuffleCollection = (props) => {
             </div>
             <div className="shuffleCards">
                 {filteredItems?.length === 0 ? yeHaplessBuffoon : filteredItems.map((item, index) =>
-                    <div className="shuffleCard"
+                    <div className="shuffleCard shadow-dark"
                          key={`Card-${item.name}-${item?.type}-${index}`}
                          style={{borderColor: `${item?.background}`}}>
 
-                        <div className={`shadow-darker rarityBanner rarity-${item?.rarity}`}/>
+                        <div className={`shadow-dark rarityBanner rarity-${item?.rarity}`}/>
 
                         <div className="shuffleContent">
                             <div className="shuffleElement">
