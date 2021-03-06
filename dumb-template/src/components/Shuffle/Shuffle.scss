@@ -4,60 +4,114 @@
   flex-flow: column wrap;
   justify-content: space-evenly;
 
+  .bookmarkTriangle {
+    position: relative;
+    width: 0;
+    height: 0;
+    top: 0px;
+    left: 48px;
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+
+    border-right: 12px solid #292929;
+  }
+
+  .rarityBanner {
+    background-image: linear-gradient(to right, rgba(60,60,60,0.3) 0%, transparent 25%);
+    border-radius: 6px 0px 0px 6px;
+    position: absolute;
+    height: 36px;
+    width: 60px;
+    top: 12px;
+    left: -6px;
+  }
+
+  .rarity-Common {
+    background-color: #ffffff;
+  }
+  .rarity-Uncommon {
+    background-color: #2b83ff;
+  }
+  .rarity-Rare {
+    background-color: #942dcf;
+  }
+  .rarity-Epic {
+    background-color: #fc5656;
+  }
+  .rarity-Unique {
+    background-color: #f8bd24;
+  }
 
   .shuffleCard {
     display: inline-flex;
+    position: relative;
     margin: 10px;
     width: 300px;
     background-color: #292929;
-    flex-flow: column;
 
     border-style: solid;
     border-width: 10px 0 0 0;
     border-radius: 10px;
 
+    flex-flow: column;
+
     .shuffleContent {
-      align-content: center;
-      width: 100%;
-      height: auto;
+      flex-flow: column;
 
-      .title {
-        font-weight: 700;
-        color: white;
-      }
+      .shuffleElement {
+        align-content: center;
+        width: 100%;
+        height: auto;
 
-      .subtitle {
-        font-weight: 500;
-        color: white;
-      }
-
-      .tag {
-        display: inline-flex;
-        margin: 0px 2px;
-
-        font-weight: 600;
-        font-size: 0.7em;
-
-        color: white;
-        text-transform: uppercase;
-        background-color: #3b5998;
-        padding: 4px 6px;
-        border-radius: 2px;
-
-        &:hover {
-          background-color: #4c6db1;
+        .title {
+          font-weight: 700;
+          color: white;
         }
-      }
 
-      .lore {
-        margin: 0;
-        font-weight: 500;
-        color: white;
-      }
+        .subtitle {
+          font-weight: 500;
+          color: white;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
 
-      img {
-        height: 100px;
-        width: 100px;
+          .subContent {
+            padding: 0px 2px;
+            margin: 0px 5px;
+            text-align: center;
+          }
+        }
+
+        .tag {
+          display: inline-flex;
+          margin: 0px 2px;
+
+          font-weight: 600;
+          font-size: 0.7em;
+
+          color: white;
+          text-transform: uppercase;
+          background-color: #3b5998;
+          padding: 4px 6px;
+          border-radius: 2px;
+
+          &:hover {
+            background-color: #4c6db1;
+          }
+        }
+
+        .lore {
+          margin: 0;
+          font-weight: 500;
+          color: white;
+        }
+
+        img {
+          height: 100px;
+          width: 100px;
+        }
       }
     }
   }
@@ -71,6 +125,7 @@
   outline: 0;
   padding: 8px 10px;
   text-align: center;
+  text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
   cursor: pointer;
@@ -84,6 +139,7 @@
   outline: 0;
   padding: 8px 10px;
   text-align: center;
+  text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
   cursor: pointer;
@@ -97,6 +153,7 @@
   outline: 0;
   padding: 8px 10px;
   text-align: center;
+  text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
   cursor: pointer;

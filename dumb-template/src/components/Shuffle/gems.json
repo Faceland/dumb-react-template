@@ -207,35 +207,6 @@
       "Armor"
     ]
   },
-  "Shards of Beauty": {
-    "broadcast": true,
-    "prefix": "Wonderful",
-    "lore": [
-      "&6+3 Reflected Damage"
-    ],
-    "weight": 5,
-    "weight-per-level": 0,
-    "bonus-weight": 5,
-    "item-groups": [
-      "Diamond",
-      "Armor"
-    ]
-  },
-  "Chiseled Runes": {
-    "broadcast": true,
-    "prefix": "Chiseled",
-    "lore": [
-      "&6+4 Armor",
-      "&6+5 Movement Speed"
-    ],
-    "weight": 5,
-    "weight-per-level": 0,
-    "bonus-weight": 5,
-    "item-groups": [
-      "Diamond",
-      "Armor"
-    ]
-  },
   "Tectonic Plate": {
     "broadcast": true,
     "lore": [
@@ -1329,20 +1300,6 @@
       "Weapon"
     ]
   },
-  "Bloodletting": {
-    "broadcast": true,
-    "suffix": "of the Harvest",
-    "lore": [
-      "&6+10 Life On Kill",
-      "&6+10% Bleed Chance"
-    ],
-    "weight": 5,
-    "weight-per-level": 0,
-    "bonus-weight": 5,
-    "item-groups": [
-      "Kama"
-    ]
-  },
   "Burn I": {
     "broadcast": false,
     "lore": [
@@ -1599,19 +1556,6 @@
     "bonus-weight": 5,
     "item-groups": [
       "Weapon"
-    ]
-  },
-  "Grim Reminder": {
-    "broadcast": false,
-    "prefix": "Reaping",
-    "lore": [
-      "&6+4 Shadow Damage"
-    ],
-    "weight": 50,
-    "weight-per-level": 0,
-    "bonus-weight": 50,
-    "item-groups": [
-      "Kama"
     ]
   },
   "Master of the Arcane": {
@@ -1975,32 +1919,6 @@
     "bonus-weight": 5,
     "item-groups": [
       "Shield"
-    ]
-  },
-  "Reap": {
-    "broadcast": true,
-    "prefix": "Sanguine",
-    "lore": [
-      "&6+8% Life Steal"
-    ],
-    "weight": 5,
-    "weight-per-level": 0,
-    "bonus-weight": 5,
-    "item-groups": [
-      "Kama"
-    ]
-  },
-  "Decapitate": {
-    "broadcast": true,
-    "prefix": "Slicing",
-    "lore": [
-      "&6+2% Head Drop"
-    ],
-    "weight": 5,
-    "weight-per-level": 0,
-    "bonus-weight": 5,
-    "item-groups": [
-      "Kama"
     ]
   },
   "Lifesteal I": {

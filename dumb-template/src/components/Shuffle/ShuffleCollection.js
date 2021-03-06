@@ -15,15 +15,16 @@ export const ShuffleCollection = (props) => {
     useEffect(() => {
         if (items.length === 0) {
             const newItems = [];
-            for (const [key, value] of Object.entries(gems)) {
+            for (const [key, gem] of Object.entries(gems)) {
                 const item = {};
                 item.title = "SOCKET GEM"
                 item.name = key;
                 item.type = "gem"
-                item.description = value.lore;
-                item.tags = mapGroupsToTags(value['item-groups'])
+                item.description = gem.lore;
+                item.tags = mapGroupsToTags(gem['item-groups'])
                 item.img = "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/26/Emerald_JE3_BE3.png";
                 item.background = "#10c810";
+                item.rarity = gem.weight > 500 ? "Common" : gem.weight > 50 ? "Uncommon" : gem.weight > 5 ? "Rare" : gem.weight > 0 ? "Epic" : "Unique";
                 newItems.push(item);
             }
 
@@ -36,6 +37,7 @@ export const ShuffleCollection = (props) => {
                 item.tags = mapGroupsToTags(value['item-groups'])
                 item.img = "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/50/Book_JE2_BE2.png";
                 item.background = "#1243d9";
+                item.rarity = value.weight > 500 ? "Common" : value.weight > 200 ? "Uncommon" : "Rare";
                 newItems.push(item);
             }
             setItems(newItems);
@@ -124,16 +126,32 @@ export const ShuffleCollection = (props) => {
     const yeHaplessBuffoon = (
         <div className="shuffleCard" style={{borderColor: "#AA0000"}} key="invalid-search">
             <div className="shuffleContent">
-                <div className="title">⚠ IMPOTENT QUERIER DETECTED ⚠</div>
-                <div className="subtitle">HALT! YOU'VE FOUND NO RESULTS!</div>
-            </div>
-            <div className="shuffleContent">
-                <img src="https://i.imgur.com/Coc4Unz.gif" alt="aaaaaaaaaa"/>
-            </div>
-            <div className="shuffleContent">
-                <p className="lore">Please refine your search and/or yourself, ye hapless buffoon</p>
+                <div className="shuffleElement">
+                    <div className="title">⚠ IMPOTENT QUERIER DETECTED ⚠</div>
+                    <div className="subtitle">HALT! YOU'VE FOUND NO RESULTS!</div>
+                </div>
+                <div className="shuffleElement">
+                    <img src="https://i.imgur.com/Coc4Unz.gif" alt="aaaaaaaaaa"/>
+                </div>
+                <div className="shuffleElement">
+                    <p className="lore">Please refine your search and/or yourself, ye hapless buffoon</p>
+                </div>
             </div>
         </div>
+    )
+
+    const rarityButton = (prop, text) => (
+        <button className={`selectorButton-${filter.rarity?.value === `${text}` ? "active" : "inactive"}`}
+                onClick={() => setFilter({...filter, rarity: {value: `${text}`, strict: "true"}})}>
+            {text}
+        </button>
+    )
+
+    const itemTypeButton = (prop, text) => (
+        <button className={`selectorButton-${filter.type?.value === `${text}` ? "active" : "inactive"}`}
+                onClick={() => setFilter({...filter, type: {value: `${text}`, strict: "true"}})}>
+            {text}
+        </button>
     )
 
     return (
@@ -160,33 +178,42 @@ export const ShuffleCollection = (props) => {
                         })}>
                     ANY
                 </button>
-                <button className={`selectorButton-${filter.type?.value === "gem" ? "active" : "inactive"}`}
-                        onClick={() => setFilter({
-                            ...filter,
-                            type: {value: "gem", strict: "true"}
-                        })}>
-                    SOCKET GEM
+                {itemTypeButton("itemType", "gem")}
+                {itemTypeButton("itemType", "tome")}
+            </div>
+            <div>
+                <div>FILTER BY RARITY</div>
+                <button className={`selectorButton-${!filter.rarity?.value ? "active" : "inactive"}`}
+                        onClick={() => setFilter({...filter, rarity: undefined})}>
+                    ANY
                 </button>
-                <button className={`selectorButton-${filter.type?.value === "tome" ? "active" : "inactive"}`}
-                        onClick={() => setFilter({
-                            ...filter,
-                            type: {value: "tome", strict: "true"}
-                        })}>
-                    ENCHANTMENT TOME
-                </button>
+                {rarityButton("rarity", "Common")}
+                {rarityButton("rarity", "Uncommon")}
+                {rarityButton("rarity", "Rare")}
+                {rarityButton("rarity", "Epic")}
+                {rarityButton("rarity", "Unique")}
+
             </div>
             <div>
                 <div>SEARCH</div>
                 <input onChange={(e) => setSearchText(e.target.value.toLowerCase())}/>
             </div>
-            <div>
-                <div className="shuffleCards">
-                    {filteredItems?.length === 0 ? yeHaplessBuffoon : filteredItems.map((item, index) =>
-                        <div className="shuffleCard" key={`Card-${item.name}-${item?.type}-${index}`}
-                             style={{borderColor: `${item?.background}`}}>
-                            <div className="shuffleContent">
+            <div className="shuffleCards">
+                {filteredItems?.length === 0 ? yeHaplessBuffoon : filteredItems.map((item, index) =>
+                    <div className="shuffleCard"
+                         key={`Card-${item.name}-${item?.type}-${index}`}
+                         style={{borderColor: `${item?.background}`}}>
+
+                        <div className={`rarityBanner rarity-${item?.rarity}`}>
+                            <div className="bookmarkTriangle"/>
+                        </div>
+
+                        <div className="shuffleContent">
+                            <div className="shuffleElement">
                                 <div className="title">{item?.title}</div>
-                                <div className="subtitle">{item?.name}</div>
+                                <div className="subtitle">
+                                    <div className="shuffleElement">{item?.name}</div>
+                                </div>
                                 <div>
                                     {item?.tags?.map((tag, index2) =>
                                         <button
@@ -195,18 +222,18 @@ export const ShuffleCollection = (props) => {
                                             onClick={() => forceTag(tag)}
                                         >{tag}</button>)}
                                 </div>
-                            </div>
-                            <div className="shuffleContent">
-                                <img src={item?.img} alt="Loading..."/>
-                            </div>
-                            <div className="shuffleContent">
-                                {item?.description?.map((line, index2) =>
-                                    <p className="lore" key={`lore${index2}`}>{line}</p>)}
+                                <div className="shuffleElement">
+                                    <img src={item?.img} alt="Loading..."/>
+                                </div>
+                                <div className="shuffleElement">
+                                    {item?.description?.map((line, index2) => <p className="lore"
+                                                                                 key={`lore${index2}`}>{line}</p>)}
+                                </div>
                             </div>
                         </div>
-                    )}
-                </div>
+                    </div>
+                )}
             </div>
         </div>
-    );
-}
+    )
+};
