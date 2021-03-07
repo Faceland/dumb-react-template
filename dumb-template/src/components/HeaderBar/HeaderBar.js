@@ -48,7 +48,7 @@ export const HeaderBar = (props) => {
     const burger = (
         <div className="burgerNav">
             <Link to="/">Home</Link>
-            <Link to="/about">Meme</Link>
+            <Link to="/about">Item Searcher</Link>
             <Link to="/topics">Dreams</Link>
             <Link to="/topics">Profile</Link>
             <Link to="/topics">Buy Gems</Link>
@@ -80,7 +80,7 @@ export const HeaderBar = (props) => {
                 <p>Gaming</p>
                 <div/>
                 <Link className="floatingButton" to="/">Home</Link>
-                <Link className="floatingButton" to="/about">Meme</Link>
+                <Link className="floatingButton" to="/about">Item Searcher</Link>
                 <Link className="floatingButton" to="/topics">Dreams</Link>
             </div>
             <div className="profileSection">
