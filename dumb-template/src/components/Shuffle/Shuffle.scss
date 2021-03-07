@@ -8,13 +8,26 @@
     border-radius: 4px 0px 0px 4px;
     position: absolute;
     height: 0;
-    width: 28px;
+    width: 25px;
     top: 12px;
     left: -6px;
 
-    border-top: 18px solid;
-    border-left: 18px solid;
-    border-bottom: 18px solid;
+    border-top: 16px solid;
+    border-left: 16px solid;
+    border-bottom: 16px solid;
+
+    p {
+      position: absolute;
+      left: -20px;
+      top: -20px;
+
+      width: 60px;
+
+      font-family: 'Tahoma', fantasy;
+      font-weight: 1000;
+      font-size: 12px;
+      text-align: center;
+    }
   }
 
   .rarity-Common {
