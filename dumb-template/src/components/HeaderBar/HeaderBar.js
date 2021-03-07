@@ -47,13 +47,11 @@ export const HeaderBar = (props) => {
 
     const burger = (
         <div className="burgerNav">
-            <ul>
-                <li><Link className="floatingButton" to="/">Home</Link></li>
-                <li><Link className="floatingButton" to="/about">Meme</Link></li>
-                <li><Link className="floatingButton" to="/topics">Dreams</Link></li>
-                <li><Link className="floatingButton" to="/topics">Profile</Link></li>
-                <li><Link className="floatingButton" to="/topics">Buy Gems</Link></li>
-            </ul>
+            <Link to="/">Home</Link>
+            <Link to="/about">Meme</Link>
+            <Link to="/topics">Dreams</Link>
+            <Link to="/topics">Profile</Link>
+            <Link to="/topics">Buy Gems</Link>
         </div>
     )
 
