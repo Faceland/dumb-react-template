@@ -4,6 +4,14 @@
   flex-flow: column wrap;
   justify-content: space-evenly;
 
+  .bannerHitbox {
+    position: absolute;
+    height: 16px;
+    width: 38px;
+    top: -8px;
+    left: -8px;
+  }
+
   .specialBanner {
     border-radius: 4px 0px 0px 4px;
     position: absolute;

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "./Shuffle.scss"
+import "../Tooltip/tooltip.scss"
 import gems from "./gems"
 import tomes from "./tomes"
 
@@ -11,6 +12,11 @@ export const ShuffleCollection = (props) => {
     const [searchText, setSearchText] = useState("");
     const [searchTags, setSearchTags] = useState([]);
     const [uniqueTags, setUniqueTags] = useState([]);
+
+    const bannerText = {};
+    bannerText.event = "Event Reward"
+    bannerText.transmute = "Transmutation Only"
+    bannerText.discontinued = "Discontinued"
 
     useEffect(() => {
         if (items.length === 0) {
@@ -208,12 +214,14 @@ export const ShuffleCollection = (props) => {
                          key={`Card-${item.name}-${item?.type}-${index}`}
                          style={{borderColor: `${item?.background}`}}>
 
-                        <div className={`shadow-dark rarityBanner rarity-${item?.rarity}`}>
+                        <div className={`data-tip='AAAAA' shadow-dark rarityBanner rarity-${item?.rarity}`}>
+                            <a className="bannerHitbox" data-tooltip={`Rarity: ${item?.rarity}`}/>
                             <p></p>
                         </div>
 
                         {item.special ?
                             <div className={`shadow-dark specialBanner special-${item.special}`}>
+                                <a className="bannerHitbox" data-tooltip={`${bannerText[item?.special]}`}/>
                                 <p></p>
                             </div> : undefined}
 
