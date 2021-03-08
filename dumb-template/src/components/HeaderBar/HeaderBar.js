@@ -38,7 +38,7 @@ export const HeaderBar = (props) => {
     }
 
     const loginButton = (
-        <AuthButton className="primaryButton shadow-normal theme-primary mx-1 drop-shadow"/>
+        <AuthButton className="theme-primary floatingButton shadow-normal mx-1"/>
     )
 
     const profileButton = (
@@ -87,9 +87,9 @@ export const HeaderBar = (props) => {
                     <p>Gaming</p>
                 </a>
                 <div/>
-                <Link className="floatingButton" to="/">Home</Link>
-                <Link className="floatingButton" to="/about">Item Searcher</Link>
-                <Link className="floatingButton" to="/topics">Dreams</Link>
+                <Link className="floatingButton theme-white" to="/">Home</Link>
+                <Link className="floatingButton theme-white" to="/about">Item Searcher</Link>
+                <Link className="floatingButton theme-white" to="/topics">Dreams</Link>
             </div>
             <div className="profileSection">
                 <Link className="gemButton" to="/topics">

@@ -5,7 +5,7 @@ export const LogoutButton = (onLogout) => {
     const {logout} = useAuth0();
 
     return (
-        <button className="floatingButton" onClick={() => {
+        <button className="floatingButton theme-white" onClick={() => {
             logout({returnTo: window.location.origin});
         }}>
             Log Out
