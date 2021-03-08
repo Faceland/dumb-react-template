@@ -21,6 +21,10 @@ export const ShuffleCollection = (props) => {
                 item.name = key;
                 item.type = "gem"
                 item.description = gem.lore;
+                item.special = gem.weight === 0 && gem['bonus-weight'] > 0 ?
+                    "transmute" : gem.event === true ?
+                        "event" : gem.discontinued === true ?
+                            "discontinued" : undefined;
                 item.tags = mapGroupsToTags(gem['item-groups'])
                 item.img = "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/26/Emerald_JE3_BE3.png";
                 item.background = "#10c810";
@@ -207,6 +211,11 @@ export const ShuffleCollection = (props) => {
                         <div className={`shadow-dark rarityBanner rarity-${item?.rarity}`}>
                             <p></p>
                         </div>
+
+                        {item.special ?
+                            <div className={`shadow-dark specialBanner special-${item.special}`}>
+                                <p></p>
+                            </div> : undefined}
 
                         <div className="shuffleContent">
                             <div className="shuffleElement">

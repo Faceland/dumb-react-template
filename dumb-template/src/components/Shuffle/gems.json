@@ -826,6 +826,7 @@
     "lore": [
       "&6+2% Combat XP"
     ],
+    "discontinued": true,
     "weight": 0,
     "weight-per-level": 0,
     "bonus-weight": 0,
@@ -838,6 +839,7 @@
     "lore": [
       "&6+3% Combat XP"
     ],
+    "discontinued": true,
     "weight": 0,
     "weight-per-level": 0,
     "bonus-weight": 0,
@@ -850,6 +852,7 @@
     "lore": [
       "&6+4% Combat XP"
     ],
+    "discontinued": true,
     "weight": 0,
     "weight-per-level": 0,
     "bonus-weight": 0,
@@ -862,6 +865,7 @@
     "lore": [
       "&6+5% Combat XP"
     ],
+    "discontinued": true,
     "weight": 0,
     "weight-per-level": 0,
     "bonus-weight": 0,
@@ -3119,6 +3123,7 @@
       "&6-20 Munchies",
       "&6+1 Sick as FUCK"
     ],
+    "event": true,
     "weight": 0,
     "weight-per-level": 0,
     "bonus-weight": 0,
@@ -3132,6 +3137,7 @@
       "&6+69x CoD XP",
       "&6(lol DAE get 69?? xD)"
     ],
+    "event": true,
     "weight": 0,
     "weight-per-level": 0,
     "bonus-weight": 0,
@@ -3146,6 +3152,7 @@
       "&6DO",
       "&6IT"
     ],
+    "event": true,
     "weight": 0,
     "weight-per-level": 0,
     "bonus-weight": 0,

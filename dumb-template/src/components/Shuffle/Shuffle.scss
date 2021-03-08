@@ -4,17 +4,56 @@
   flex-flow: column wrap;
   justify-content: space-evenly;
 
+  .specialBanner {
+    border-radius: 4px 0px 0px 4px;
+    position: absolute;
+    height: 0;
+    width: 20px;
+    top: 34px;
+    left: -6px;
+
+    border-top: 8px solid;
+    border-left: 8px solid;
+    border-bottom: 8px solid;
+
+    p {
+      position: absolute;
+      left: -20px;
+      top: -20px;
+
+      width: 60px;
+
+      font-family: 'Tahoma', fantasy;
+      font-weight: 1000;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+
+  .special-transmute {
+    border-color: #d369e7;
+    border-right: 8px solid transparent;
+  }
+  .special-event {
+    border-color: #47dba4;
+    border-right: 8px solid transparent;
+  }
+  .special-discontinued {
+    border-color: #a0a0a0;
+    border-right: 8px solid transparent;
+  }
+
   .rarityBanner {
     border-radius: 4px 0px 0px 4px;
     position: absolute;
     height: 0;
-    width: 25px;
+    width: 20px;
     top: 12px;
     left: -6px;
 
-    border-top: 16px solid;
-    border-left: 16px solid;
-    border-bottom: 16px solid;
+    border-top: 8px solid;
+    border-left: 8px solid;
+    border-bottom: 8px solid;
 
     p {
       position: absolute;
@@ -32,23 +71,23 @@
 
   .rarity-Common {
     border-color: white;
-    border-right: 12px solid transparent;
+    border-right: 8px solid transparent;
   }
   .rarity-Uncommon {
     border-color: #2b83ff;
-    border-right: 12px solid transparent;
+    border-right: 8px solid transparent;
   }
   .rarity-Rare {
     border-color: #942dcf;
-    border-right: 12px solid transparent;
+    border-right: 8px solid transparent;
   }
   .rarity-Epic {
     border-color: #fc5656;
-    border-right: 12px solid transparent;
+    border-right: 8px solid transparent;
   }
   .rarity-Unique {
     border-color: #f8bd24;
-    border-right: 12px solid transparent;
+    border-right: 8px solid transparent;
   }
 
   .shuffleCard {
