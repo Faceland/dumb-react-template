@@ -58,10 +58,14 @@ export const HeaderBar = (props) => {
     const mobileHeader = (
         <div className="headerBar" style={{background: 'white', transition: 'none'}}>
             <div className="logo">
-                <img className="logo mx-1"
-                     src="https://hamiltonrising.com/wp-content/uploads/2018/09/website-logo-png.png"
-                     alt="FREE SLIMEYS DE"/>
-                <p>Gaming</p>
+                <a className="logo mx-1" href="/">
+                    <img
+                        src="https://hamiltonrising.com/wp-content/uploads/2018/09/website-logo-png.png"
+                        alt="Website Img"/>
+                </a>
+                <a href="/">
+                    <p>Gaming</p>
+                </a>
                 <div/>
             </div>
             <div>
@@ -74,10 +78,14 @@ export const HeaderBar = (props) => {
     const desktopHeader = (
         <div className="headerBar" style={props.fancy ? scrollStyle : {background: 'white'}}>
             <div className="logo">
-                <img className="logo mx-1"
-                     src="https://hamiltonrising.com/wp-content/uploads/2018/09/website-logo-png.png"
-                     alt="FREE SLIMEYS DE"/>
-                <p>Gaming</p>
+                <a className="logo mx-1" href="/">
+                    <img
+                        src="https://hamiltonrising.com/wp-content/uploads/2018/09/website-logo-png.png"
+                        alt="Website Img"/>
+                </a>
+                <a href="/">
+                    <p>Gaming</p>
+                </a>
                 <div/>
                 <Link className="floatingButton" to="/">Home</Link>
                 <Link className="floatingButton" to="/about">Item Searcher</Link>

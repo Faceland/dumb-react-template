@@ -72,7 +72,13 @@
       height: 100%;
     }
 
+    /* For making the logo text not-styled */
+    a {
+      text-decoration: none;
+    }
+
     p {
+      color: black;
       font-weight: 1000;
       margin-right: 30px;
       margin-left: 10px;
