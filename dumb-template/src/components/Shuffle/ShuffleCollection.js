@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import _, {debounce} from 'lodash';
 import "./Shuffle.scss"
 import "../Tooltip/tooltip.scss"
 import gems from "./gems"
@@ -206,7 +207,7 @@ export const ShuffleCollection = (props) => {
             </div>
             <div>
                 <div>SEARCH</div>
-                <input onChange={(e) => setSearchText(e.target.value.toLowerCase())}/>
+                <input onChange={debounce((e) => setSearchText(e.target.value.toLowerCase()), 1000)}/>
             </div>
             <div className="shuffleCards">
                 {filteredItems?.length === 0 ? yeHaplessBuffoon : filteredItems.map((item, index) =>
