@@ -2,7 +2,6 @@ import React, {useContext} from "react";
 import {HeaderBar} from "../../components/HeaderBar/HeaderBar";
 import {MainBanner} from "../../components/MainBanner/MainBanner";
 import {PlayersOnlineBanner} from "../../components/PlayersOnlineBanner/PlayersOnlineBanner";
-import {Col, Row} from "react-flexbox-grid";
 import {Footer} from "../../components/Footer/Footer";
 import {BodyPanel} from "../../components/BodyPanel/BodyPanel";
 import {Context} from "../../Store";
@@ -73,10 +72,10 @@ export const Home = (props) => {
 
     const desktopSection = (image, body, inverted) => (
         <div className="flexRow">
-            <div className="flexCol width50">
+            <div className={`flexCol width${inverted ? "60" : "40"}`}>
                 {inverted ? body : image}
             </div>
-            <div className="flexCol width50">
+            <div className={`flexCol width${inverted ? "40" : "60"}`}>
                 {inverted ? image : body}
             </div>
         </div>
