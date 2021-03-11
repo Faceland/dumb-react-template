@@ -13,142 +13,91 @@ export const Home = (props) => {
 
     const [state, dispatch] = useContext(Context);
 
+    // Use images with a height of 300px or greater with
+    // the 'action' in the center for best results
     const homeImageOne = (
-        <Col md>
-            <div className="fullSize">
-                <img
-                    src="https://media1.tenor.com/images/bbb92fe330c082c0d289da72fb2277bc/tenor.gif?itemid=17592134"
-                    alt="horse hours"/>
-            </div>
-        </Col>
+        <img
+            className="fillImg"
+            src="https://media4.giphy.com/media/iGjy1NDdcHop9y7YPI/giphy.gif"
+            alt="horse hours"/>
+    )
+
+    const bodyOne = (
+        <div>
+            <div className="panelTitle">Over 200 Amazing Abilities</div>
+            <div className="panelText">Faceland has over 200 abilities to unlock! Each ability is unique and can range from crazy attacks to buffs for your whole party! Mix and match abilities to make a truly unique setup, then crush some monsters (or players!)</div>
+            <div className="panelText">Unlock new abilities by leveling up your combat skills! There's tons of options like Swordsmanship, Archery, Arcane Magics, and more!</div>
+        </div>
     )
 
     const homeImageTwo = (
-        <Col md>
-            <div className="fullSize">
-                <img src="https://i.imgur.com/vSD8DGq.gif" alt="regretz"/>
-            </div>
-        </Col>
+        <img
+            className="fillImg"
+            src="https://i.imgur.com/vSD8DGq.gif"
+            alt="regretz"/>
+    )
+
+    const bodyTwo = (
+        <div>
+            <div className="panelTitle">Skills Aren't Just For Combat!</div>
+            <div className="panelText">Level up up more than a dozen non-combat skills and become the ultimates tradesman! Make your money with Fishing, Enchanting, Crafting, Mining and more!</div>
+            <div className="panelText">Explore awesome mini-games or improve your character's stats with skills like Agility and Sneak!</div>
+        </div>
     )
 
     const homeImageThree = (
-        <Col md>
-            <div className="fullSize">
-                <img src="https://i.imgur.com/vSD8DGq.gif" alt="regretz"/>
+        <img
+            className="fillImg"
+            src="https://media2.giphy.com/media/8JYGM40BDpt8kzgN6C/giphy.gif"
+            alt="regretz"/>
+    )
+
+    const bodyThree = (
+        <div>
+            <div className="panelTitle">Loot Loot Loot!</div>
+            <div className="panelText">Faceland features an amazing random item generation system, as well as some rare pre-made items from bosses and monsters! There's infinite possibilities, with more than a trillion possible combinations for any one item type!</div>
+            <div className="panelText">Upgrade your gear! Not only are there limitless options in what gear you can find, you can upgrade and customize items with gems, scrolls, and tomes to make the perfect loadout!</div>
+        </div>
+    )
+
+    const mobileSection = (image, body) => (
+        <div className="flexCol">
+            <div className="flexRow width100">
+                {image}
             </div>
-        </Col>
+            <div className="flexRow width100">
+                {body}
+            </div>
+        </div>
+    )
+
+    const desktopSection = (image, body, inverted) => (
+        <div className="flexRow">
+            <div className="flexCol width50">
+                {inverted ? body : image}
+            </div>
+            <div className="flexCol width50">
+                {inverted ? image : body}
+            </div>
+        </div>
     )
 
     return (
-        <div className="App">
+        <div className="App Home">
             <HeaderBar fancy={true}/>
             <MainBanner/>
             <PlayersOnlineBanner/>
             <div className="bodySection">
                 <div className="bodyPadding">
-                    <Row>
-                        <BodyPanel>
-                            <Row>
-                                {homeImageOne}
-                                <Col md>
-                                    <p className="bodyTitle">GENERIC TITLE</p>
-                                    <div>According to all known laws of aviation, there is no way a bee should be able
-                                        to
-                                        fly. Its wings are too small to get its fat little body off the ground. The bee,
-                                        of
-                                        course, flies anyway because bees don't care what humans think is impossible.
-                                        Yellow, black. Yellow, black. Yellow, black. Yellow, black. Ooh, black and
-                                        yellow!
-                                        Let's shake it up a little. Barry! Breakfast is ready! Ooming! Hang on a second.
-                                        Hello? - Barry? - Adam? - Oan you believe this is happening? - I can't. I'll
-                                        pick
-                                        you up. Looking sharp. Use the stairs. Your father paid good money for those.
-                                        Sorry.
-                                        I'm excited. Here's the graduate. We're very proud of you, son. A perfect report
-                                        card, all B's. Very proud. Ma! I got a thing going here. - You got lint on your
-                                        fuzz. - Ow! That's me! - Wave to us! We'll be in row 118,000. - Bye! Barry, I
-                                        told
-                                        you, stop flying in the house! - Hey, Adam. - Hey, Barry. - Is that fuzz gel? -
-                                        A
-                                        little. Special day, graduation. Never thought I'd make it. Three days grade
-                                        school,
-                                        three days high school. Those were awkward. Three days college. I'm glad I took
-                                        a
-                                        day and hitchhiked around the hive. You did come back different.
-                                    </div>
-                                </Col>
-                            </Row>
-                        </BodyPanel>
-                    </Row>
-                    <Row>
-                        <BodyPanel>
-                            <Row>
-                                {state.mobile && homeImageTwo}
-                                <Col md>
-                                    <p className="bodyTitle">HOLY FUCK</p>
-                                    <div>According to all known laws of aviation, there is no way a bee should be able
-                                        to
-                                        fly. Its wings are too small to get its fat little body off the ground. The bee,
-                                        of
-                                        course, flies anyway because bees don't care what humans think is impossible.
-                                        Yellow, black. Yellow, black. Yellow, black. Yellow, black. Ooh, black and
-                                        yellow!
-                                        Let's shake it up a little. Barry! Breakfast is ready! Ooming! Hang on a second.
-                                        Hello? - Barry? - Adam? - Oan you believe this is happening? - I can't. I'll
-                                        pick
-                                        you up. Looking sharp. Use the stairs. Your father paid good money for those.
-                                        Sorry.
-                                        I'm excited. Here's the graduate. We're very proud of you, son. A perfect report
-                                        card, all B's. Very proud. Ma! I got a thing going here. - You got lint on your
-                                        fuzz. - Ow! That's me! - Wave to us! We'll be in row 118,000. - Bye! Barry, I
-                                        told
-                                        you, stop flying in the house! - Hey, Adam. - Hey, Barry. - Is that fuzz gel? -
-                                        A
-                                        little. Special day, graduation. Never thought I'd make it. Three days grade
-                                        school,
-                                        three days high school. Those were awkward. Three days college. I'm glad I took
-                                        a
-                                        day and hitchhiked around the hive. You did come back different.
-                                    </div>
-                                </Col>
-                                {!state.mobile && homeImageTwo}
-                            </Row>
-                        </BodyPanel>
-                    </Row>
-                    <Row>
-                        <BodyPanel>
-                            <Row>
-                                {homeImageThree}
-                                <Col md>
-                                    <p className="bodyTitle">NO FRIGGIN WAY</p>
-                                    <div>According to all known laws of aviation, there is no way a bee should be able
-                                        to
-                                        fly. Its wings are too small to get its fat little body off the ground. The bee,
-                                        of
-                                        course, flies anyway because bees don't care what humans think is impossible.
-                                        Yellow, black. Yellow, black. Yellow, black. Yellow, black. Ooh, black and
-                                        yellow!
-                                        Let's shake it up a little. Barry! Breakfast is ready! Ooming! Hang on a second.
-                                        Hello? - Barry? - Adam? - Oan you believe this is happening? - I can't. I'll
-                                        pick
-                                        you up. Looking sharp. Use the stairs. Your father paid good money for those.
-                                        Sorry.
-                                        I'm excited. Here's the graduate. We're very proud of you, son. A perfect report
-                                        card, all B's. Very proud. Ma! I got a thing going here. - You got lint on your
-                                        fuzz. - Ow! That's me! - Wave to us! We'll be in row 118,000. - Bye! Barry, I
-                                        told
-                                        you, stop flying in the house! - Hey, Adam. - Hey, Barry. - Is that fuzz gel? -
-                                        A
-                                        little. Special day, graduation. Never thought I'd make it. Three days grade
-                                        school,
-                                        three days high school. Those were awkward. Three days college. I'm glad I took
-                                        a
-                                        day and hitchhiked around the hive. You did come back different.
-                                    </div>
-                                </Col>
-                            </Row>
-                        </BodyPanel>
-                    </Row>
+                    <BodyPanel>
+                        {state.mobile ? mobileSection(homeImageOne, bodyOne) : desktopSection(homeImageOne, bodyOne, false)}
+                    </BodyPanel>
+                    <BodyPanel>
+                        {state.mobile ? mobileSection(homeImageTwo, bodyTwo) : desktopSection(homeImageTwo, bodyTwo, true)}
+                    </BodyPanel>
+                    <BodyPanel>
+                        {state.mobile ? mobileSection(homeImageThree, bodyThree) : desktopSection(homeImageThree, bodyThree, false)}
+                    </BodyPanel>
                 </div>
             </div>
             <Footer/>
