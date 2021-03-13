@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useContext} from 'react';
 import './headerBar.scss'
 import '../../App.scss'
 import {PrimaryButton} from '../PrimaryButton/PrimaryButton'
@@ -10,12 +10,12 @@ import {Context} from "../../Store";
 
 export const HeaderBar = (props) => {
 
-    const [state, dispatch] = useContext(Context);
+    const [state] = useContext(Context);
 
     const [scrollStyle, setScrollStyle] = useState({background: 'transparent'})
     const [profileOpen, setProfileOpen] = useState(false);
     const [burgerOpen, setBurgerState] = useState(false);
-    const {user, isAuthenticated, isLoading} = useAuth0();
+    const {isAuthenticated} = useAuth0();
 
     window.onscroll = function () {
         if (!props.fancy || state.mobile) return

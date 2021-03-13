@@ -1,9 +1,9 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect} from "react";
 import {Context} from "../Store";
 
-export const MobileStateHandler = (props) => {
+export const MobileStateHandler = () => {
 
-    const [state, dispatch] = useContext(Context);
+    const [dispatch] = useContext(Context);
 
     window.onresize = function () {
         dispatch({type: 'SET_MOBILE_MODE', payload: window.innerHeight / window.innerWidth > 1.5})

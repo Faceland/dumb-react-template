@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
-import _, {debounce} from 'lodash';
+import {debounce} from 'lodash';
 import "./Shuffle.scss"
 import "../Tooltip/tooltip.scss"
 import gems from "./gems"
 import tomes from "./tomes"
 
-export const ShuffleCollection = (props) => {
+export const ShuffleCollection = () => {
 
     const [items, setItems] = useState([]);
     const [filteredItems, setFilteredItems] = useState([{name: "loading", meme: "yes"}]);
