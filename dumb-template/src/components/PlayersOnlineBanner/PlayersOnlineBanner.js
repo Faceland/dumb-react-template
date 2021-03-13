@@ -20,7 +20,7 @@ export const PlayersOnlineBanner = (props) => {
                     console.log("Failed to get player online", error)
                 }
             )
-    });
+    }, []);
 
     return (
         <div className="playersOnlineBanner">
