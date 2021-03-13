@@ -3,7 +3,7 @@ import {Context} from "../Store";
 
 export const MobileStateHandler = () => {
 
-    const [dispatch] = useContext(Context);
+    const [state, dispatch] = useContext(Context);
 
     window.onresize = function () {
         dispatch({type: 'SET_MOBILE_MODE', payload: window.innerHeight / window.innerWidth > 1.5})
