@@ -36,6 +36,10 @@ button, input[type="submit"], input[type="reset"] {
   margin-right: 0.5rem;
 }
 
+.centerContent {
+  justify-content: center;
+}
+
 .flexCol {
   display: flex;
   flex-direction: column;
