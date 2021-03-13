@@ -1,11 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import './PlayersOnlineBanner.scss'
 
 export const PlayersOnlineBanner = (props) => {
 
     const [playersMessage, setPlayersMessage] = useState("Loading...");
+    let timer;
 
     useEffect(() => {
+        fetchStatus()
+        return () => {
+            timer && clearTimeout(timer);
+        };
+    }, []);
+
+    const fetchStatus = () => {
         fetch("https://api.mcsrvstat.us/2/199.127.61.235:25566")
             .then(res => res.json())
             .then(
@@ -19,8 +27,11 @@ export const PlayersOnlineBanner = (props) => {
                 (error) => {
                     console.log("Failed to get player online", error)
                 }
-            )
-    }, []);
+            );
+        timer = setTimeout(() => {
+            fetchStatus()
+        }, 60000)
+    }
 
     return (
         <div className="playersOnlineBanner">
