@@ -15,7 +15,7 @@
 /* Position tooltip above the element */
 [data-tooltip]:before {
   position: absolute;
-  bottom: 150%;
+  bottom: calc(100% + 10px);
   left: 50%;
   margin-left: -80px;
   padding: 7px;
@@ -35,10 +35,9 @@
 /* Triangle hack to make tooltip look like a speech bubble */
 [data-tooltip]:after {
   position: absolute;
-  bottom: 150%;
+  bottom: calc(100% + 10px);
   left: 50%;
   margin-bottom: -5px;
-  margin-left: -5px;
   width: 0;
   border-top: 5px solid #000;
   border-top: 5px solid hsla(0, 0%, 23%, 0.95);
@@ -47,6 +46,7 @@
   content: " ";
   font-size: 0;
   line-height: 0;
+  z-index: -5;
 }
 
 /* Show tooltip content on hover */

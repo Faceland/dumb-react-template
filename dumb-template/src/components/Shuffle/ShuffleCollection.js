@@ -215,7 +215,7 @@ export const ShuffleCollection = () => {
                          key={`Card-${item.name}-${item?.type}-${index}`}
                          style={{borderColor: `${item?.background}`}}>
 
-                        <div className={`data-tip='AAAAA' shadow-dark rarityBanner rarity-${item?.rarity}`}>
+                        <div className={`shadow-dark rarityBanner rarity-${item?.rarity}`}>
                             <a className="bannerHitbox" data-tooltip={`Rarity: ${item?.rarity}`}/>
                             <p></p>
                         </div>

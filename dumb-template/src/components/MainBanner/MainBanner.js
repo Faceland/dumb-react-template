@@ -15,8 +15,10 @@ export const MainBanner = () => {
             >
                 background video
             </video>
-            <div className="bannerTitle">JET FUEL</div>
-            <div className="bannerSubtitle">can't melt steel beems</div>
+            <img
+                className={state.mobile ? "mobileBannerTitle" : "desktopBannerTitle"}
+                src="https://i.imgur.com/EOXkN9z.png"
+                alt="Website Img"/>
             <CopyWidget/>
         </div>
     )

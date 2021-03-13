@@ -3,6 +3,9 @@
   height: 30vw;
   min-height: 300px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .videoBg {
     position: absolute;
@@ -16,19 +19,16 @@
     object-fit: cover; /* combined with 'absolute', works like background-size, but for DOM elements */
   }
 
-  .bannerTitle {
-    text-align: center;
+  .desktopBannerTitle {
+    margin-top: 50px;
     display: inline-flex;
-    font-size: calc(4rem + 2vw);
-    padding-top: 3vw;
-    font-weight: 1000;
-    color: #282c34;
+    margin-bottom: -2%;
+    width: 50%;
   }
 
-  .bannerSubtitle {
-    text-align: center;
-    font-size: calc(2rem + 1.5vw);
-    font-weight: 300;
-    color: #282c34;
+  .mobileBannerTitle {
+    margin-top: 6%;
+    margin-bottom: -6%;
+    width: 90%;
   }
 }
