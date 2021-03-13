@@ -61,7 +61,7 @@ export const Home = (props) => {
 
     const mobileSection = (image, body) => (
         <div className="flexCol">
-            <div className="flexRow width100">
+            <div className="flexRow width100 centerContent">
                 {image}
             </div>
             <div className="flexRow width100">
@@ -72,10 +72,10 @@ export const Home = (props) => {
 
     const desktopSection = (image, body, inverted) => (
         <div className="flexRow">
-            <div className={`flexCol width${inverted ? "60" : "40"}`}>
+            <div className={`flexCol width${inverted ? "60" : "40 centerContent"}`}>
                 {inverted ? body : image}
             </div>
-            <div className={`flexCol width${inverted ? "40" : "60"}`}>
+            <div className={`flexCol width${inverted ? "40 centerContent" : "60"}`}>
                 {inverted ? image : body}
             </div>
         </div>
