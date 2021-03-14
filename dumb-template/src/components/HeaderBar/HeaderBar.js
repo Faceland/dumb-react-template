@@ -75,7 +75,7 @@ export const HeaderBar = (props) => {
     )
 
     const desktopHeader = (
-        <div className="headerBar" style={props.fancy ? scrollStyle : {background: 'white'}}>
+        <div className="headerBar shadow-normal" style={props.fancy ? scrollStyle : {background: 'white'}}>
             <div className="logo mx-1">
                 <a href="/">
                     <img
