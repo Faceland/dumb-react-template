@@ -16,6 +16,8 @@ import {MobileStateHandler} from "./components/MobileStateHandler";
 import {ShuffleCollection} from "./components/Shuffle/ShuffleCollection";
 import {Home} from "./pages/Home/Home";
 import {DiscordWidget} from "./components/DiscordWidget/DiscordWidget"
+import {Gems} from "./pages/Gems/Gems";
+import {ProtectedRoute} from "./components/ProtectedRoute";
 
 function App() {
 
@@ -35,6 +37,7 @@ function App() {
                         <Route path="/topics">
                             <Topics/>
                         </Route>
+                        <ProtectedRoute path="/gems" component={Gems}/>
                         <Route path="/">
                             <Home/>
                         </Route>
@@ -89,7 +92,6 @@ function Topics() {
                     </Route>
                 </Switch>
             </div>
-            <DiscordWidget/>
         </div>
     );
 }

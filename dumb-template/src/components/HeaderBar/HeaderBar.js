@@ -52,7 +52,7 @@ export const HeaderBar = (props) => {
                 <Link to="/about">Item Searcher</Link>
                 <Link to="/topics">Dreams</Link>
                 <Link to="/topics">Profile</Link>
-                <Link to="/topics">Buy Gems</Link>
+                <Link to="/gems">Buy Gems</Link>
             </div>
         </div>
     )
@@ -60,11 +60,11 @@ export const HeaderBar = (props) => {
     const mobileHeader = (
         <div className="headerBar" style={{background: 'white', transition: 'none'}}>
             <div className="logo mx-1">
-                <a href="/">
+                <Link to="/">
                     <img
                         src="https://i.imgur.com/FSMeukV.png"
                         alt="Website Img"/>
-                </a>
+                </Link>
                 <div/>
             </div>
             <div>
@@ -77,18 +77,18 @@ export const HeaderBar = (props) => {
     const desktopHeader = (
         <div className="headerBar shadow-normal" style={props.fancy ? scrollStyle : {background: 'white'}}>
             <div className="logo mx-1">
-                <a href="/">
+                <Link to="/">
                     <img
                         src="https://i.imgur.com/FSMeukV.png"
                         alt="Website Img"/>
-                </a>
+                </Link>
                 <div/>
                 <Link className="floatingButton theme-white" to="/">Home</Link>
                 <Link className="floatingButton theme-white" to="/about">Item Searcher</Link>
                 <Link className="floatingButton theme-white" to="/topics">Dreams</Link>
             </div>
             <div className="profileSection">
-                <Link className="gemButton" to="/topics">
+                <Link className="gemButton" to="/gems">
                     <span className="gemDisplay">42069 Gems</span>
                     <span className="buyGems">Get More</span>
                 </Link>

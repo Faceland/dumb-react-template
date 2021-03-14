@@ -1,0 +1,14 @@
+.buddy {
+  position: absolute;
+  left: 85%;
+  top: -85px;
+  width: 12%;
+  z-index: 3;
+  transform: rotate(10deg);
+  transition: opacity .25s ease-in-out;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1.0;
+  }
+}
