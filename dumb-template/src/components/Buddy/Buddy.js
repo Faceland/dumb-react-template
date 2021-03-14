@@ -1,11 +1,14 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import useSound from "use-sound";
 import { Shake } from 'reshake'
 
 import './buddy.scss'
 import boopSfx from '../../sounds/Player_hurt1.ogg';
+import {Context} from "../../Store";
 
 export const Buddy = () => {
+
+    const [state] = useContext(Context);
 
     const [life, setLife] = useState(5);
     const [shake, setShake] = useState(false)
@@ -21,11 +24,11 @@ export const Buddy = () => {
         shakeTimeout && clearTimeout(shakeTimeout);
         shakeTimeout = setTimeout(() => {
             setShake(false);
-        }, 250)
+        }, 100)
     }
 
 
-    if (life < 1) {
+    if (state.mobile || life < 1) {
         return <></>;
     }
 
