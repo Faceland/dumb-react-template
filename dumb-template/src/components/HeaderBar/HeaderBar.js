@@ -46,12 +46,14 @@ export const HeaderBar = (props) => {
     )
 
     const burger = (
-        <div className="burgerNav">
-            <Link to="/">Home</Link>
-            <Link to="/about">Item Searcher</Link>
-            <Link to="/topics">Dreams</Link>
-            <Link to="/topics">Profile</Link>
-            <Link to="/topics">Buy Gems</Link>
+        <div className="burgerContainer" onClick={toggleBurger}>
+            <div className="burgerNav">
+                <Link to="/">Home</Link>
+                <Link to="/about">Item Searcher</Link>
+                <Link to="/topics">Dreams</Link>
+                <Link to="/topics">Profile</Link>
+                <Link to="/topics">Buy Gems</Link>
+            </div>
         </div>
     )
 
