@@ -15,6 +15,7 @@ import {Auth0Provider} from "@auth0/auth0-react";
 import {MobileStateHandler} from "./components/MobileStateHandler";
 import {ShuffleCollection} from "./components/Shuffle/ShuffleCollection";
 import {Home} from "./pages/Home/Home";
+import {DiscordWidget} from "./components/DiscordWidget/DiscordWidget"
 
 function App() {
 
@@ -51,6 +52,7 @@ function About() {
             <div className="basicPage" style={{marginTop: "50px"}}>
                 <ShuffleCollection/>
             </div>
+            <DiscordWidget/>
             <Footer/>
         </div>
     )
@@ -87,6 +89,7 @@ function Topics() {
                     </Route>
                 </Switch>
             </div>
+            <DiscordWidget/>
         </div>
     );
 }

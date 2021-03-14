@@ -5,6 +5,7 @@ import {PlayersOnlineBanner} from "../../components/PlayersOnlineBanner/PlayersO
 import {Footer} from "../../components/Footer/Footer";
 import {BodyPanel} from "../../components/BodyPanel/BodyPanel";
 import {Context} from "../../Store";
+import {DiscordWidget} from "../../components/DiscordWidget/DiscordWidget"
 
 import './home.scss'
 
@@ -99,6 +100,7 @@ export const Home = (props) => {
                     </BodyPanel>
                 </div>
             </div>
+            <DiscordWidget/>
             <Footer/>
         </div>
     );
