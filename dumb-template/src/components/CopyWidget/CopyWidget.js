@@ -4,6 +4,7 @@ import "../Tooltip/tooltip.scss"
 
 export const CopyWidget = () => {
 
+    var IP = "MC.ADDRESS.WHATEVER"
     const [copyText, setCopyText] = useState("Click To Copy!");
     let timeout;
 
@@ -18,12 +19,15 @@ export const CopyWidget = () => {
     return (
         <div
             className="copyButton shadow-normal theme-primary"
-            onClick={copyTransition}
+            onClick={() => {
+                copyTransition();
+                navigator.clipboard.writeText(IP);
+            }}
             data-tooltip={copyText}
         >
             <span>🗎</span>
             <span className="divider"/>
-            <span>MC.ADDRESS.WHATEVER</span>
+            <span>{IP}</span>
         </div>
     );
 }
