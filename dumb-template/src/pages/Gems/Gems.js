@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react";
+import React from "react";
 import {HeaderBar} from "../../components/HeaderBar/HeaderBar";
 import {Footer} from "../../components/Footer/Footer";
 

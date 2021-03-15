@@ -11,7 +11,7 @@ import './home.scss'
 
 export const Home = (props) => {
 
-    const [state, dispatch] = useContext(Context);
+    const [state] = useContext(Context);
 
     // Use images with a height of 300px or greater with
     // the 'action' in the center for best results

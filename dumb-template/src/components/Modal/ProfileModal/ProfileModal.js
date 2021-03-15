@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import ReactModal from 'react-modal';
 
 import './profileModal.scss'
@@ -21,7 +21,7 @@ export const ProfileModal = ({isOpen, close}) => {
 
     const loadingContent = (
         <div>
-            <img src="https://i.imgflip.com/2fw0fb.jpg" alt="placeholder loading image"/>
+            <img src="https://i.imgflip.com/2fw0fb.jpg" alt="placeholder loading"/>
             <h2>Loading...</h2>
             <p>Loading...</p>
         </div>
