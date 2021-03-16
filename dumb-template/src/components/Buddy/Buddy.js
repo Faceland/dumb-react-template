@@ -54,7 +54,7 @@ export const Buddy = () => {
                     if (newMarker.lifespan > 0) {
                         newMarker.x = newMarker.x + newMarker.xVelocity;
                         newMarker.y = newMarker.y + newMarker.yVelocity;
-                        newMarker.yVelocity = newMarker.yVelocity + 0.4;
+                        newMarker.yVelocity = newMarker.yVelocity + 20;
                         newMarker.lifespan--;
                         newValues.push(newMarker);
                     }
@@ -62,7 +62,7 @@ export const Buddy = () => {
                 setHitMarkers(newValues)
             }
             tickMarkers()
-        }, 10)
+        }, 100)
     }
 
     const playSound = () => {
@@ -79,11 +79,11 @@ export const Buddy = () => {
 
     const createHitMarker = (id) => {
         const hitMarker = {id: id};
-        hitMarker.lifespan = 40;
+        hitMarker.lifespan = 10;
         hitMarker.x = x;
         hitMarker.y = y;
-        hitMarker.xVelocity = 10 * (-0.5 + Math.random());
-        hitMarker.yVelocity = -2 - 4 * Math.random();
+        hitMarker.xVelocity = 80 * (-0.5 + Math.random());
+        hitMarker.yVelocity = -30 - 50 * Math.random();
         hitMarker.text = 8 + Math.floor(Math.random() * Math.floor(22))
 
         const newMarkers = hitMarkers;
