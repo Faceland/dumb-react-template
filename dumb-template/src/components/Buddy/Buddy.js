@@ -6,7 +6,7 @@ import boopSfx from '../../sounds/Player_hurt1.ogg';
 
 export const Buddy = () => {
 
-    const [life, setLife] = useState(Math.random() < 2 ? 5 : 0);
+    const [life, setLife] = useState(Math.random() < 0.05 ? 5 : 0);
     const [shake, setShake] = useState(false)
 
     const [play] = useSound(boopSfx);
