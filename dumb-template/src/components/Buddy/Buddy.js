@@ -21,7 +21,6 @@ export const Buddy = () => {
     useEffect(() => {
         tickMarkers()
         return () => {
-            console.log("unmount")
             hitTimer && clearTimeout(hitTimer);
             setHitMarkers([])
         };
@@ -45,11 +44,13 @@ export const Buddy = () => {
     markerRef.current = hitMarkers;
 
     const tickMarkers = () => {
+        if (markerRef.current.length === 0 && life === 0) {
+            return
+        }
         hitTimer = setTimeout(() => {
             if (markerRef.current.length > 0) {
                 let newValues = []
                 markerRef.current.forEach(newMarker => {
-                    console.log(newMarker)
                     if (newMarker.lifespan > 0) {
                         newMarker.x = newMarker.x + newMarker.xVelocity;
                         newMarker.y = newMarker.y + newMarker.yVelocity;
@@ -96,6 +97,7 @@ export const Buddy = () => {
             <div>
                 {hitMarkers.map((marker, index) =>
                     <div
+                        id={`marker-${marker.id}`}
                         key={`marker-${marker.id}`}
                         className="hit-marker"
                         style={{
@@ -113,6 +115,7 @@ export const Buddy = () => {
         <div>
             {hitMarkers.map((marker, index) =>
                 <div
+                    id={`marker-${marker.id}`}
                     key={`marker-${marker.id}`}
                     className="hit-marker"
                     style={{
