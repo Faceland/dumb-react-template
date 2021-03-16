@@ -9,14 +9,14 @@ export const Footer = (props) => {
             <Buddy/>
             <div className="footer">
                 <div className="flexRow width100">
-                    <div className="footerSection flexCol width50">
-                        <img className="width60" style={{opacity: 0.4}} src="https://i.imgur.com/T8YvK3B.png"
+                    <div className="footerSection flexCol width40">
+                        <img className="pixelImage width40" style={{opacity: 0.4}} src="https://i.imgur.com/Uf1s8wX.png"
                              alt="emboss_logo"/>
                     </div>
-                    <div className="footerSection flexCol width50">
+                    <div className="footerSection flexCol width60">
                         <div className="flexRow width100">
                             <div className="flexCol width50" style={{alignItems: "flex-start"}}>
-                                <h4>GAMERS</h4>
+                                <h4 className="thin-underline">GAMERS</h4>
                                 <div>Home</div>
                                 <div>Info</div>
                                 <div>Contact</div>
@@ -24,7 +24,7 @@ export const Footer = (props) => {
                                 <div>Privacy Policy</div>
                             </div>
                             <div className="flexCol width50" style={{alignItems: "flex-start"}}>
-                                <h4>GAMERS</h4>
+                                <h4 className="thin-underline">GAMERS</h4>
                                 <div>Home</div>
                                 <div>Info</div>
                                 <div>Contact</div>

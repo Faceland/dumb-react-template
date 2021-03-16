@@ -36,8 +36,21 @@ button, input[type="submit"], input[type="reset"] {
   margin-right: 0.5rem;
 }
 
+.circle-border {
+  border-radius: 300px;
+}
+
+.border-5 {
+  border-radius: 5px;
+}
+
+
 .centerContent {
   justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 .flexCol {
@@ -85,8 +98,19 @@ button, input[type="submit"], input[type="reset"] {
   color: white;
 }
 
-.drop-shadow {
-  filter: drop-shadow(0px 6px 8px #3c3c3c);
+.pixelImage {
+  image-rendering: optimizeSpeed;             /* Older versions of FF          */
+  image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+  image-rendering: -webkit-optimize-contrast; /* Safari                        */
+  image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+  image-rendering: pixelated;                 /* Awesome future-browsers       */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE                            */
+}
+
+.thin-underline {
+  border-bottom: solid;
+  border-width: 1px;
+  color: white;
 }
 
 .bodySection {
