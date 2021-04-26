@@ -11,22 +11,18 @@ import Store from './Store'
 
 import {HeaderBar} from "./components/HeaderBar/HeaderBar";
 import {Footer} from "./components/Footer/Footer";
-import {Auth0Provider} from "@auth0/auth0-react";
 import {MobileStateHandler} from "./components/MobileStateHandler";
 import {ShuffleCollection} from "./components/Shuffle/ShuffleCollection";
 import {Home} from "./pages/Home/Home";
 import {DiscordWidget} from "./components/DiscordWidget/DiscordWidget"
 import {Gems} from "./pages/Gems/Gems";
 import {ProtectedRoute} from "./components/ProtectedRoute";
+import {AuthProviderWithHistory} from "./components/AuthProviderWithHistory/AuthProviderWithHistory";
 
 function App() {
 
     return (
-        <Auth0Provider
-            domain="dev-v-l-v252.us.auth0.com"
-            clientId="QhYPNu2AYQmUgEdgVmRMTEigba8asNBG"
-            redirectUri={window.location.origin}
-        >
+        <AuthProviderWithHistory>
             <Router>
                 <Store>
                     <MobileStateHandler/>
@@ -44,7 +40,7 @@ function App() {
                     </Switch>
                 </Store>
             </Router>
-        </Auth0Provider>
+        </AuthProviderWithHistory>
     );
 }
 

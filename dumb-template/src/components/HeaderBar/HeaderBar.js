@@ -15,7 +15,7 @@ export const HeaderBar = (props) => {
     const [scrollStyle, setScrollStyle] = useState({background: 'transparent'})
     const [profileOpen, setProfileOpen] = useState(false);
     const [burgerOpen, setBurgerState] = useState(false);
-    const {isAuthenticated} = useAuth0();
+    const {isLoading, isAuthenticated} = useAuth0();
 
     window.onscroll = function () {
         if (!props.fancy || state.mobile) return
@@ -68,7 +68,7 @@ export const HeaderBar = (props) => {
                 <div/>
             </div>
             <div>
-                {isAuthenticated ? profileButton : loginButton}
+                {!isLoading && isAuthenticated ? profileButton : loginButton}
                 <i className="fa fa-bars" onClick={toggleBurger}/>
             </div>
         </div>
@@ -92,7 +92,7 @@ export const HeaderBar = (props) => {
                     <span className="gemDisplay">42069 Gems</span>
                     <span className="buyGems">Get More</span>
                 </Link>
-                {isAuthenticated ? profileButton : loginButton}
+                {!isLoading && isAuthenticated ? profileButton : loginButton}
             </div>
         </div>
     )

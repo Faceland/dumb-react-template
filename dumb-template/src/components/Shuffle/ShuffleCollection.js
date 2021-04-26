@@ -4,6 +4,7 @@ import "./Shuffle.scss"
 import "../Tooltip/tooltip.scss"
 import gems from "./gems"
 import tomes from "./tomes"
+import McText from "mctext-react/lib/McText";
 
 export const ShuffleCollection = () => {
 
@@ -243,10 +244,21 @@ export const ShuffleCollection = () => {
                                 <div className="shuffleElement">
                                     <img src={item?.img} alt="Loading..."/>
                                 </div>
+                                <div style={{backgroundColor: "black", borderRadius: "5px", margin: "0px 10px"}}>
                                 <div className="shuffleElement">
-                                    {item?.description?.map((line, index2) => <p className="lore"
-                                                                                 key={`lore${index2}`}>{line}</p>)}
+                                    {item?.description?.map((line, index2) => (
+                                        <div>
+                                            <McText
+                                                className="lore"
+                                                prefix={"&"}
+                                                key={`lore${index2}`}>
+                                                {line}
+                                            </McText>
+                                        </div>)
+                                    )}
                                 </div>
+                                </div>
+                                <div style={{marginTop: '10px'}}/>
                             </div>
                         </div>
                     </div>
