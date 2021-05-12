@@ -9,11 +9,11 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .theme-primary {
-  color: white;
-  background-color: #4CAF50;
+  color: whitesmoke;
+  background-color: #48ba3b;
 
   &:hover {
-    background-color: #5ac65f;
+    background-color: #6ad45e
   }
 }
 
@@ -113,13 +113,24 @@ button, input[type="submit"], input[type="reset"] {
   color: white;
 }
 
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
 .bodySection {
   width: 100%;
-  background-color: #eeeeee;
+  background-color: #b33d3d;
+  //#9E8683
 }
 
 .bodyPadding {
-  padding: 20px;
+  padding: 0;
 }
 
 .shadow-normal {

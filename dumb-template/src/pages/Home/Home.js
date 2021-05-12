@@ -6,6 +6,7 @@ import {Footer} from "../../components/Footer/Footer";
 import {BodyPanel} from "../../components/BodyPanel/BodyPanel";
 import {Context} from "../../Store";
 import {DiscordWidget} from "../../components/DiscordWidget/DiscordWidget"
+import {QuoteTicker} from "../../components/QuoteTicker/QuoteTicker";
 
 import './home.scss'
 
@@ -87,19 +88,20 @@ export const Home = (props) => {
             <HeaderBar fancy={true}/>
             <MainBanner/>
             <PlayersOnlineBanner/>
-            <div className="bodySection">
+            <div className="bodySection pixelImage">
                 <div className="bodyPadding">
-                    <BodyPanel>
+                    <BodyPanel style={{backgroundColor: '#7A6360'}}>
                         {state.mobile ? mobileSection(homeImageOne, bodyOne) : desktopSection(homeImageOne, bodyOne, false)}
                     </BodyPanel>
-                    <BodyPanel>
+                    <BodyPanel style={{backgroundColor: '#695350'}}>
                         {state.mobile ? mobileSection(homeImageTwo, bodyTwo) : desktopSection(homeImageTwo, bodyTwo, true)}
                     </BodyPanel>
-                    <BodyPanel>
+                    <BodyPanel style={{backgroundColor: '#57423F'}}>
                         {state.mobile ? mobileSection(homeImageThree, bodyThree) : desktopSection(homeImageThree, bodyThree, false)}
                     </BodyPanel>
                 </div>
             </div>
+            <QuoteTicker/>
             <DiscordWidget/>
             <Footer/>
         </div>

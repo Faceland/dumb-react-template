@@ -34,7 +34,7 @@ export const PlayersOnlineBanner = (props) => {
     }
 
     return (
-        <div className="playersOnlineBanner">
+        <div className="playersOnlineBanner shadow-normal">
             <p>{playersMessage}</p>
         </div>
     );

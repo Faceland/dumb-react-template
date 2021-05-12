@@ -4,8 +4,6 @@ import './bodyPanel.scss'
 export const BodyPanel = (props) => {
 
     return (
-        <div className="basicPanel">
-            {props.children}
-        </div>
+        <div {...props} className="basicPanel"/>
     );
 }

@@ -99,7 +99,7 @@ export const Buddy = () => {
                     <div
                         id={`marker-${marker.id}`}
                         key={`marker-${marker.id}`}
-                        className="hit-marker"
+                        className="hit-marker no-select"
                         style={{
                             top: marker.y,
                             left: marker.x
@@ -117,7 +117,7 @@ export const Buddy = () => {
                 <div
                     id={`marker-${marker.id}`}
                     key={`marker-${marker.id}`}
-                    className="hit-marker"
+                    className="hit-marker no-select"
                     style={{
                         top: marker.y,
                         left: marker.x
