@@ -27,14 +27,14 @@ export const DiscordWidget = () => {
 
     const widget = (
         <div>
+            <button style={{position: "relative", float: "right", top: -7}} onClick={toggleWidget}>x</button>
             <iframe
-                src="https://discord.com/widget?id=660007693989445642&theme=dark"
-                title="discordWidget"
+                src="https://discord.com/widget?id=133012942890336256&theme=dark"
                 width="350" height="500"
-                allowtransparency="true"
-                frameborder="0"
-                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"/>
-            <button onClick={toggleWidget}>x</button>
+                allowTransparency="true"
+                frameBorder="0"
+                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+            </iframe>
         </div>
     )
 
