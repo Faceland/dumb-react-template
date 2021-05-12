@@ -10,12 +10,11 @@ export const DiscordWidget = () => {
     }
 
     const button = (
-        <div onClick={toggleWidget}>
+        <div style={{height: 80, width: 80, backgroundColor: "#7289DA", borderRadius: 100}} onClick={toggleWidget}>
             <svg
-                className="bi bi-discord"
+                className="discordIcon"
                 xmlns="http://www.w3.org/2000/svg"
-                width="56" height="56"
-                fill="currentColor"
+                fill={"#ffffff"}
                 viewBox="0 0 16 16">
                 <path
                     d="M6.552 6.712c-.456 0-.816.4-.816.888s.368.888.816.888c.456 0 .816-.4.816-.888.008-.488-.36-.888-.816-.888zm2.92 0c-.456 0-.816.4-.816.888s.368.888.816.888c.456 0 .816-.4.816-.888s-.36-.888-.816-.888z"/>
