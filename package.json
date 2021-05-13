@@ -1,6 +1,6 @@
 {
-  "homepage": "http://face.land/dumb-react-template/",
-  "name": "dumb-template",
+  "homepage": "https://faceland.github.io/dumb-react-template/",
+  "name": "dumb-react-template",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,7 +16,7 @@
     "react-flexbox-grid": "^2.1.2",
     "react-modal": "^3.12.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.2",
+    "react-scripts": "^4.0.3",
     "react-spring": "^8.0.27",
     "react-ticker": "^1.2.2",
     "styled-components": "^5.2.1",
@@ -24,12 +24,12 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "node_modules/.bin/react-scripts start",
+    "build": "node_modules/.bin/react-scripts build",
+    "test": "node_modules/.bin/react-scripts test",
+    "eject": "node_modules/.bin/react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "node_modules/.bin/gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

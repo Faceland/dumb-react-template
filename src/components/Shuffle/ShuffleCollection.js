@@ -2,8 +2,8 @@ import React, {useState, useEffect} from "react";
 import {debounce} from 'lodash';
 import "./Shuffle.scss"
 import "../Tooltip/tooltip.scss"
-import gems from "./gems"
-import tomes from "./tomes"
+import gems from "./gems.json"
+import tomes from "./tomes.json"
 import McText from "mctext-react/lib/McText";
 
 export const ShuffleCollection = () => {
