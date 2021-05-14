@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   .videoBg {
     position: absolute;
@@ -19,16 +20,26 @@
     object-fit: cover; /* combined with 'absolute', works like background-size, but for DOM elements */
   }
 
-  .desktopBannerTitle {
-    margin-top: 50px;
-    display: inline-flex;
-    margin-bottom: -2%;
-    width: 50%;
+  .desktopTitle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+
+    img {
+      height: 100%;
+    }
   }
 
-  .mobileBannerTitle {
-    margin-top: 6%;
-    margin-bottom: -6%;
-    width: 90%;
+  .mobileTitle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 550px;
+
+    img {
+      width: 100%;
+    }
   }
 }

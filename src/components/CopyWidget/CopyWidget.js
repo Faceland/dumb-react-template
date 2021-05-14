@@ -2,32 +2,31 @@ import React, {useState} from "react";
 import './copyWidget.scss'
 import "../Tooltip/tooltip.scss"
 
-export const CopyWidget = () => {
+export const CopyWidget = (props) => {
 
-    var IP = "MC.ADDRESS.WHATEVER"
-    const [copyText, setCopyText] = useState("Click To Copy!");
+    const [copyStatus, setCopyStatus] = useState("Click To Copy!");
     let timeout;
 
     const copyTransition = () => {
         timeout && clearTimeout(timeout);
-        setCopyText("Copied!")
+        setCopyStatus("Copied!")
         timeout = setTimeout(() => {
-            setCopyText("Click To Copy!");
+            setCopyStatus("Click To Copy!");
         }, 2000);
     }
 
     return (
         <div
-            className="copyButton shadow-normal theme-primary"
+            className="copyButton theme-primary shadow-normal"
             onClick={() => {
                 copyTransition();
-                navigator.clipboard.writeText(IP);
+                navigator.clipboard.writeText(props.copyText);
             }}
-            data-tooltip={copyText}
+            data-tooltip={copyStatus}
         >
             <span>🗎</span>
             <span className="divider"/>
-            <span>{IP}</span>
+            <span>{props.copyText}</span>
         </div>
     );
 }

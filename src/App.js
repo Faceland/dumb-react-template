@@ -16,13 +16,10 @@ import {ShuffleCollection} from "./components/Shuffle/ShuffleCollection";
 import {Home} from "./pages/Home/Home";
 import {DiscordWidget} from "./components/DiscordWidget/DiscordWidget"
 import {Gems} from "./pages/Gems/Gems";
-import {ProtectedRoute} from "./components/ProtectedRoute";
-import {AuthProviderWithHistory} from "./components/AuthProviderWithHistory/AuthProviderWithHistory";
 
 function App() {
 
     return (
-        <AuthProviderWithHistory>
             <Router>
                 <Store>
                     <MobileStateHandler/>
@@ -33,14 +30,12 @@ function App() {
                         <Route path="/topics">
                             <Topics/>
                         </Route>
-                        <ProtectedRoute path="/gems" component={Gems}/>
                         <Route path="/">
                             <Home/>
                         </Route>
                     </Switch>
                 </Store>
             </Router>
-        </AuthProviderWithHistory>
     );
 }
 

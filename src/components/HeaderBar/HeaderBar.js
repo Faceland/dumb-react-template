@@ -3,8 +3,6 @@ import './headerBar.scss'
 import '../../App.scss'
 import {PrimaryButton} from '../PrimaryButton/PrimaryButton'
 import {Link} from "react-router-dom";
-import {AuthButton} from "../AuthButton/AuthButton";
-import {useAuth0} from "@auth0/auth0-react";
 import {ProfileModal} from "../Modal/ProfileModal/ProfileModal";
 import {Context} from "../../Store";
 
@@ -13,37 +11,16 @@ export const HeaderBar = (props) => {
     const [state] = useContext(Context);
 
     const [scrollStyle, setScrollStyle] = useState({background: 'transparent'})
-    const [profileOpen, setProfileOpen] = useState(false);
     const [burgerOpen, setBurgerState] = useState(false);
-    const {isLoading, isAuthenticated} = useAuth0();
 
     window.onscroll = function () {
         if (!props.fancy || state.mobile) return
         setScrollStyle(window.pageYOffset < 10 ? {background: 'transparent'} : {background: 'white'});
     }
 
-    const openModal = () => {
-        setProfileOpen(true);
-        console.log("open!")
-    }
-
-    const closeModal = () => {
-        setProfileOpen(false);
-        console.log("closed!")
-    }
-
     const toggleBurger = () => {
         setBurgerState(!burgerOpen);
-        console.log("oh boy 1 krabby patty coming right up")
     }
-
-    const loginButton = (
-        <AuthButton className="theme-primary floatingButton shadow-normal mx-1"/>
-    )
-
-    const profileButton = (
-        <PrimaryButton onClick={openModal}>Profile</PrimaryButton>
-    )
 
     const burger = (
         <div className="burgerContainer" onClick={toggleBurger}>
@@ -52,7 +29,7 @@ export const HeaderBar = (props) => {
                 <Link to="/about">Item Searcher</Link>
                 <Link to="/topics">Dreams</Link>
                 <Link to="/topics">Profile</Link>
-                <Link to="/gems">Buy Gems</Link>
+                <a href="https://faceland-rpg.craftingstore.net/category/247715" target="_blank">Buy Gems</a>
             </div>
         </div>
     )
@@ -68,7 +45,6 @@ export const HeaderBar = (props) => {
                 <div/>
             </div>
             <div>
-                {!isLoading && isAuthenticated ? profileButton : loginButton}
                 <i className="fa fa-bars" onClick={toggleBurger}/>
             </div>
         </div>
@@ -88,11 +64,9 @@ export const HeaderBar = (props) => {
                 <Link className="floatingButton theme-white" to="/topics">Dreams</Link>
             </div>
             <div className="profileSection">
-                <Link className="gemButton" to="/gems">
-                    <span className="gemDisplay">42069 Gems</span>
-                    <span className="buyGems">Get More</span>
-                </Link>
-                {!isLoading && isAuthenticated ? profileButton : loginButton}
+                <a className="gemButton" href="https://faceland-rpg.craftingstore.net/category/247715" target="_blank">
+                    <span className="gemDisplay">Buy FaceGems!</span>
+                </a>
             </div>
         </div>
     )
@@ -101,7 +75,6 @@ export const HeaderBar = (props) => {
         <div>
             {state.mobile ? mobileHeader : desktopHeader}
             {burgerOpen ? burger : null}
-            <ProfileModal isOpen={profileOpen} close={closeModal}/>
         </div>
     )
 }
