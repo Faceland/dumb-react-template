@@ -1,12 +1,11 @@
 .copyButton {
   display: inline-block;
   border: none;
-  padding: 5px 10px;
+  padding: 5px 10px 6px 10px;
   text-align: center;
   text-decoration: none;
   font-size: calc(0.8rem + 0.7vw);
   z-index: 1;
-  margin: 4px 2px;
   cursor: pointer;
   border-radius: 4px;
 
@@ -14,7 +13,6 @@
     border-left: 1px solid;
     border-color: rgba(0, 0, 0, 0.3);
     height: 100%;
-    margin-left: 0.8vw;
-    margin-right: 0.8vw;
+    margin: 0 7px;
   }
 }
