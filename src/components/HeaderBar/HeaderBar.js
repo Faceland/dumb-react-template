@@ -1,9 +1,7 @@
 import React, {useState, useContext} from 'react';
 import './headerBar.scss'
 import '../../App.scss'
-import {PrimaryButton} from '../PrimaryButton/PrimaryButton'
 import {Link} from "react-router-dom";
-import {ProfileModal} from "../Modal/ProfileModal/ProfileModal";
 import {Context} from "../../Store";
 
 export const HeaderBar = (props) => {
@@ -26,9 +24,8 @@ export const HeaderBar = (props) => {
         <div className="burgerContainer" onClick={toggleBurger}>
             <div className="burgerNav">
                 <Link to="/">Home</Link>
-                <Link to="/about">Item Searcher</Link>
-                <Link to="/topics">Dreams</Link>
-                <Link to="/topics">Profile</Link>
+                <Link to="/guide">Guide</Link>
+                <Link to="/about">Items</Link>
                 <a href="https://faceland-rpg.craftingstore.net/category/247715" target="_blank">Buy Gems</a>
             </div>
         </div>
@@ -60,12 +57,14 @@ export const HeaderBar = (props) => {
                 </Link>
                 <div/>
                 <Link className="floatingButton theme-white" to="/">Home</Link>
-                <Link className="floatingButton theme-white" to="/about">Item Searcher</Link>
-                <Link className="floatingButton theme-white" to="/topics">Dreams</Link>
+                <Link className="floatingButton theme-white" to="/guide">Guide</Link>
+                <Link className="floatingButton theme-white" to="/about">Items</Link>
             </div>
             <div className="profileSection">
                 <a className="gemButton" href="https://faceland-rpg.craftingstore.net/category/247715" target="_blank">
-                    <span className="gemDisplay">Buy FaceGems!</span>
+                    <div className="gemDisplay">
+                        <p>Buy FaceGems!</p><img src="https://i.imgur.com/Sy2kgca.png" alt="gem icon"/>
+                    </div>
                 </a>
             </div>
         </div>
@@ -74,6 +73,7 @@ export const HeaderBar = (props) => {
     return (
         <div>
             {state.mobile ? mobileHeader : desktopHeader}
+            {(!props.fancy || state.mobile) && (<div style={{marginBottom: 50}}/>)}
             {burgerOpen ? burger : null}
         </div>
     )

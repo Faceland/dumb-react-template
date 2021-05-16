@@ -18,20 +18,36 @@
     border: none;
     margin: 0px 10px;
     outline: 0;
-    text-decoration: none;
     cursor: pointer;
-    border-radius: 20px;
+    width: 180px;
+    height: 27px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    background-image: linear-gradient(#c645ef, #911bb1);
+    border-radius: 10px;
+
+    &:hover {
+      background-image: linear-gradient(#d474ff, #b12ed4);
+    }
 
     .gemDisplay {
       color: #ffffff;
-      background-image: linear-gradient(#c645ef, #911bb1);
-      width: 200px;
-      padding: 9px 30px 11px 30px;
-      text-align: center;
-      text-decoration: none;
+      height: 100%;
       font-weight: 600;
-      cursor: pointer;
-      border-radius: 10px;
+      justify-content: center;
+      justify-items: center;
+      display: flex;
+      flex-direction: row;
+
+      p {
+        margin: 2px 0 0 0;
+      }
+
+      img {
+        margin-left: 6px;
+        height: 100%;
+      }
     }
 
     .buyGems {
