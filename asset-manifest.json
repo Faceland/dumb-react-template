@@ -1,29 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.a84b25a2.chunk.css",
-    "main.js": "/static/js/main.cb947cba.chunk.js",
-    "main.js.map": "/static/js/main.cb947cba.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.6266d553.js",
-    "runtime-main.js.map": "/static/js/runtime-main.6266d553.js.map",
-    "static/css/2.0817ad80.chunk.css": "/static/css/2.0817ad80.chunk.css",
-    "static/js/2.bfb97541.chunk.js": "/static/js/2.bfb97541.chunk.js",
-    "static/js/2.bfb97541.chunk.js.map": "/static/js/2.bfb97541.chunk.js.map",
-    "static/js/3.b4b253a2.chunk.js": "/static/js/3.b4b253a2.chunk.js",
-    "static/js/3.b4b253a2.chunk.js.map": "/static/js/3.b4b253a2.chunk.js.map",
-    "static/js/4.4cb223ba.chunk.js": "/static/js/4.4cb223ba.chunk.js",
-    "static/js/4.4cb223ba.chunk.js.map": "/static/js/4.4cb223ba.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.0817ad80.chunk.css.map": "/static/css/2.0817ad80.chunk.css.map",
-    "static/css/main.a84b25a2.chunk.css.map": "/static/css/main.a84b25a2.chunk.css.map",
-    "static/js/2.bfb97541.chunk.js.LICENSE.txt": "/static/js/2.bfb97541.chunk.js.LICENSE.txt",
-    "static/js/3.b4b253a2.chunk.js.LICENSE.txt": "/static/js/3.b4b253a2.chunk.js.LICENSE.txt",
-    "static/media/Player_hurt1.4e4a02a9.ogg": "/static/media/Player_hurt1.4e4a02a9.ogg"
+    "main.css": "/face.land/static/css/main.9ad5f206.chunk.css",
+    "main.js": "/face.land/static/js/main.3ecd0908.chunk.js",
+    "main.js.map": "/face.land/static/js/main.3ecd0908.chunk.js.map",
+    "runtime-main.js": "/face.land/static/js/runtime-main.b446da18.js",
+    "runtime-main.js.map": "/face.land/static/js/runtime-main.b446da18.js.map",
+    "static/js/2.06647849.chunk.js": "/face.land/static/js/2.06647849.chunk.js",
+    "static/js/2.06647849.chunk.js.map": "/face.land/static/js/2.06647849.chunk.js.map",
+    "static/js/3.81e12986.chunk.js": "/face.land/static/js/3.81e12986.chunk.js",
+    "static/js/3.81e12986.chunk.js.map": "/face.land/static/js/3.81e12986.chunk.js.map",
+    "static/js/4.253431a4.chunk.js": "/face.land/static/js/4.253431a4.chunk.js",
+    "static/js/4.253431a4.chunk.js.map": "/face.land/static/js/4.253431a4.chunk.js.map",
+    "index.html": "/face.land/index.html",
+    "static/css/main.9ad5f206.chunk.css.map": "/face.land/static/css/main.9ad5f206.chunk.css.map",
+    "static/js/2.06647849.chunk.js.LICENSE.txt": "/face.land/static/js/2.06647849.chunk.js.LICENSE.txt",
+    "static/js/3.81e12986.chunk.js.LICENSE.txt": "/face.land/static/js/3.81e12986.chunk.js.LICENSE.txt",
+    "static/media/Player_hurt1.4e4a02a9.ogg": "/face.land/static/media/Player_hurt1.4e4a02a9.ogg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6266d553.js",
-    "static/css/2.0817ad80.chunk.css",
-    "static/js/2.bfb97541.chunk.js",
-    "static/css/main.a84b25a2.chunk.css",
-    "static/js/main.cb947cba.chunk.js"
+    "static/js/runtime-main.b446da18.js",
+    "static/js/2.06647849.chunk.js",
+    "static/css/main.9ad5f206.chunk.css",
+    "static/js/main.3ecd0908.chunk.js"
   ]
 }
